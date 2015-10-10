@@ -19,7 +19,7 @@ public class Welcome extends JFrame {
 		/* Create the window - size = 1000x860 and start = (400, 100) */
 		Welcome frame = new Welcome();
 		frame.setBounds(400, 100, 1000, 860);
-		frame.setTitle("Present Picker - Homepage");
+		frame.setTitle("Present Picker");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		/* Make the window visible */
@@ -61,7 +61,8 @@ public class Welcome extends JFrame {
 		/* Add an action to the button using anonymous inner class */
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				// TODO Action in this button	
+				Welcome.this.setVisible(false);
+				new Form().setVisible(true);
 			}
 		});
 		pane.add(startButton);
