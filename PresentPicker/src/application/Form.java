@@ -43,6 +43,7 @@ public class Form extends JFrame {
 	private JCheckBox houseCheckBox;
 	private JCheckBox drinkCheckBox;
 	private JButton searchButton;
+	private JButton cleanButton;
 	
 	private String genders[] = {"", "Male", "Female"};
 	public final String FONT_TITTLE = "Andalus";
@@ -50,7 +51,7 @@ public class Form extends JFrame {
 	public final String FONT_BUTTON = "Sylfaen";
 	
 	Gifted gifted = new Gifted();
-	
+
 	public static void main(String[] args) {
 		
 		Form frame = new Form();
@@ -185,6 +186,32 @@ public class Form extends JFrame {
 		musicCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		musicCheckBox.setBounds(650, 580, 150, 30);
 		pane.add(musicCheckBox);
+		
+		cleanButton = new JButton("CLEAN");
+		cleanButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
+		cleanButton.setBounds(320, 700, 150, 30);
+		
+		cleanButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				firstNameTextField.setText("");
+				lastNameTextField.setText("");
+				genderComboBox.setSelectedItem("");
+				ageTextField.setText("");
+				relationshipTextField.setText("");
+				movieBookCheckBox.setSelected(false);
+				sportCheckBox.setSelected(false);
+				religionCheckBox.setSelected(false);
+				kidsCheckBox.setSelected(false);
+				outdoorCheckBox.setSelected(false);
+				houseCheckBox.setSelected(false);
+				gameCheckBox.setSelected(false);
+				drinkCheckBox.setSelected(false);
+				musicCheckBox.setSelected(false);
+				
+			}
+		});
+		
+		pane.add(cleanButton);
 		
 		searchButton = new JButton("SEARCH");
 		searchButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
