@@ -11,7 +11,7 @@ public class Sport extends Product {
 		
 	}
 	
-	/* Full constructor, including those in the super class Products */
+	/* Full constructor, including those in the superclass Products */
 	public Sport (String equipmentFor, String sizeSport, String nameProduct, String descriptionProduct, 
 			String storeProduct, float priceProduct) {
 		super(nameProduct, descriptionProduct, storeProduct, priceProduct);

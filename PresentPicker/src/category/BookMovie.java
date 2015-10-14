@@ -13,7 +13,7 @@ public class BookMovie extends Product {
 
 	}
 
-	/* Full constructor, including those in the super class Products */
+	/* Full constructor, including those in the superclass Products */
 	public BookMovie(String authorBook, String directorMovie, String durationMovie, int numberPagesBook,
 			String nameProduct, String descriptionProduct, String storeProduct, float priceProduct) {
 		super(nameProduct, descriptionProduct, storeProduct, priceProduct);
