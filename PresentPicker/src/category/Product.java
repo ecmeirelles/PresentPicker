@@ -3,10 +3,10 @@ package category;
 /* Class that represents the products which is in the categories */
 public class Product {
 	/* Product attributes: name, description, store and price */
-	private String nameProduct;
-	private String descriptionProduct;
-	private String storeProduct;
-	private float priceProduct;
+	protected String nameProduct;
+	protected String descriptionProduct;
+	protected String storeProduct;
+	protected float priceProduct;
 	
 	/* Empty constructor */
 	public Product() {
