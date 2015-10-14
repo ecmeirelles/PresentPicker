@@ -3,7 +3,6 @@ package application;
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -49,6 +48,7 @@ public class Form extends JFrame {
 	public final String FONT_TITTLE = "Andalus";
 	public final String FONT_BODY = "Sylfaen";
 	public final String FONT_BUTTON = "Sylfaen";
+	private static final long serialVersionUID = 1L;
 	
 	Gifted gifted = new Gifted();
 

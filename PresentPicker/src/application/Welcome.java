@@ -10,8 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class Welcome extends JFrame {
-	
+public class Welcome extends JFrame {	
 	/* Welcome attributes */
 	private JPanel pane;
 	private JLabel welcomeLabel;
@@ -22,6 +21,7 @@ public class Welcome extends JFrame {
 	public final String FONT_TITTLE = "Andalus";
 	public final String FONT_BODY = "Sylfaen";
 	public final String FONT_BUTTON = "Sylfaen";
+	private static final long serialVersionUID = 1L;
 	
 	public static void main(String[] args) {
 		
