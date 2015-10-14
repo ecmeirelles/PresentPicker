@@ -2,10 +2,11 @@ package category;
 
 /* Class that represents the products which is in the categories */
 public class Product {
-	/* Product attributes: name, description, store and price */
+	/* Product attributes: name, description, store, image and price */
 	protected String nameProduct;
 	protected String descriptionProduct;
 	protected String storeProduct;
+	protected String imageProduct;
 	protected float priceProduct;
 	
 	/* Empty constructor */
@@ -14,12 +15,13 @@ public class Product {
 	}
 
 	/* Full constructor */
-	public Product(String nameProduct, String descriptionProduct, String storeProduct, float priceProduct) {
-		super();
+	public Product(String nameProduct, String descriptionProduct, String storeProduct, String imageProduct, 
+			float priceProduct) {
 		this.nameProduct = nameProduct;
 		this.descriptionProduct = descriptionProduct;
 		this.storeProduct = storeProduct;
 		this.priceProduct = priceProduct;
+		this.imageProduct = imageProduct;
 	}
 
 	/* Getters and Setter methods to access and to modify, respectively, the attributes */
@@ -45,6 +47,14 @@ public class Product {
 
 	public void setStoreProduct(String storeProduct) {
 		this.storeProduct = storeProduct;
+	}
+	
+	public String getImageProduct() {
+		return imageProduct;
+	}
+
+	public void setImageProduct(String imageProduct) {
+		this.imageProduct = imageProduct;
 	}
 
 	public float getPriceProduct() {

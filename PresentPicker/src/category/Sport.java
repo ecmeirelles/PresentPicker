@@ -13,8 +13,8 @@ public class Sport extends Product {
 	
 	/* Full constructor, including those in the superclass Products */
 	public Sport (String equipmentFor, String sizeSport, String nameProduct, String descriptionProduct, 
-			String storeProduct, float priceProduct) {
-		super(nameProduct, descriptionProduct, storeProduct, priceProduct);
+			String storeProduct, String imageProduct, float priceProduct) {
+		super(nameProduct, descriptionProduct, storeProduct, imageProduct, priceProduct);
 		this.equipmentFor = equipmentFor;
 		this.sizeSport = sizeSport;
 	}

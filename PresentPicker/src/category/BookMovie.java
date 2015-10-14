@@ -15,8 +15,9 @@ public class BookMovie extends Product {
 
 	/* Full constructor, including those in the superclass Products */
 	public BookMovie(String authorBook, String directorMovie, String durationMovie, int numberPagesBook,
-			String nameProduct, String descriptionProduct, String storeProduct, float priceProduct) {
-		super(nameProduct, descriptionProduct, storeProduct, priceProduct);
+			String nameProduct, String descriptionProduct, String storeProduct, String imageProduct, 
+			float priceProduct) {
+		super(nameProduct, descriptionProduct, storeProduct, imageProduct, priceProduct);
 		this.authorBook = authorBook;
 		this.directorMovie = directorMovie;
 		this.durationMovie = durationMovie;
