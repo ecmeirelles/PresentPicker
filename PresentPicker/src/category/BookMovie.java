@@ -13,15 +13,20 @@ public class BookMovie extends Product {
 
 	}
 
-	/* Full constructor, including those in the superclass Products */
-	public BookMovie(String authorBook, String directorMovie, String durationMovie, int numberPagesBook,
-			String nameProduct, String descriptionProduct, String storeProduct, String imageProduct, 
-			float priceProduct) {
+	/* Book constructor, including those in the superclass Products */
+	public BookMovie(String authorBook, int numberPagesBook, String nameProduct, String descriptionProduct, 
+			String storeProduct, String imageProduct, double priceProduct) {
 		super(nameProduct, descriptionProduct, storeProduct, imageProduct, priceProduct);
 		this.authorBook = authorBook;
+		this.numberPagesBook = numberPagesBook;
+	}
+	
+	/* Movie constructor, including those in the superclass Products */
+	public BookMovie(String directorMovie, String durationMovie, String nameProduct, String descriptionProduct, 
+			String storeProduct, String imageProduct, float priceProduct) {
+		super(nameProduct, descriptionProduct, storeProduct, imageProduct, priceProduct);
 		this.directorMovie = directorMovie;
 		this.durationMovie = durationMovie;
-		this.numberPagesBook = numberPagesBook;
 	}
 	
 	/* Getters and Setter methods to access and to modify, respectively, the attributes */

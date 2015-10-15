@@ -13,7 +13,7 @@ public class Religion extends Product {
 	
 	/* Full constructor, including those in the superclass Product */
 	public Religion(String sizeReligion, String nameProduct, String descriptionProduct, String storeProduct, 
-			String imageProduct, float priceProduct) {
+			String imageProduct, double priceProduct) {
 		super(nameProduct, descriptionProduct, storeProduct, imageProduct, priceProduct);
 		this.sizeReligion = sizeReligion;
 	}

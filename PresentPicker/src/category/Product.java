@@ -7,7 +7,7 @@ public class Product {
 	protected String descriptionProduct;
 	protected String storeProduct;
 	protected String imageProduct;
-	protected float priceProduct;
+	protected double priceProduct;
 	
 	/* Empty constructor */
 	public Product() {
@@ -16,7 +16,7 @@ public class Product {
 
 	/* Full constructor */
 	public Product(String nameProduct, String descriptionProduct, String storeProduct, String imageProduct, 
-			float priceProduct) {
+			double priceProduct) {
 		this.nameProduct = nameProduct;
 		this.descriptionProduct = descriptionProduct;
 		this.storeProduct = storeProduct;
@@ -57,11 +57,11 @@ public class Product {
 		this.imageProduct = imageProduct;
 	}
 
-	public float getPriceProduct() {
+	public double getPriceProduct() {
 		return priceProduct;
 	}
 
-	public void setPriceProduct(float priceProduct) {
+	public void setPriceProduct(double priceProduct) {
 		this.priceProduct = priceProduct;
 	}
 }
