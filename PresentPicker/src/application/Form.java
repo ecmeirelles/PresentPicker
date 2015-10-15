@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import category.BookMovie;
 import gifted.Gifted;
 
 public class Form extends JFrame {
@@ -231,7 +232,48 @@ public class Form extends JFrame {
 				System.out.println("Age: " + gifted.getAgeGifted());
 				System.out.println("Relationship: " + gifted.getRelationshipGifted());
 				
-				//TODO Action regarding all the checkboxes 
+				Form.this.setVisible(false);		
+				
+				//TODO Action regarding all the checkboxes
+				Result result = new Result();
+						
+				if (movieBookCheckBox.isSelected()) {
+					result.checkBoxResult(movieBookCheckBox.getText());
+				}
+				
+				if (sportCheckBox.isSelected()) {
+					result.checkBoxResult(sportCheckBox.getText());
+				}
+				
+				if (religionCheckBox.isSelected()) {
+					result.checkBoxResult(religionCheckBox.getText());
+				}
+				
+				if (kidsCheckBox.isSelected()) {
+					result.checkBoxResult(kidsCheckBox.getText());
+				}
+				
+				if (outdoorCheckBox.isSelected()) {
+					result.checkBoxResult(outdoorCheckBox.getText());
+				}
+				
+				if (houseCheckBox.isSelected()) {
+					result.checkBoxResult(houseCheckBox.getText());
+				}
+				
+				if (gameCheckBox.isSelected()) {
+					result.checkBoxResult(gameCheckBox.getText());
+				}
+				
+				if (drinkCheckBox.isSelected()) {
+					result.checkBoxResult(drinkCheckBox.getText());
+				}
+				
+				if (musicCheckBox.isSelected()) {
+					result.checkBoxResult(musicCheckBox.getText());
+				}
+				
+				result.setVisible(true);
 			}
 		});
 		
