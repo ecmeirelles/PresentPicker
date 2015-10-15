@@ -20,6 +20,9 @@ public class Result extends JFrame {
 	private JLabel appIconLabel;
 	private JLabel appNameLabel;
 	private JLabel resultsInterestLabel;
+	private JLabel productIconLabel;
+	private JLabel productNameLabel;
+	private JLabel productPriceLabel;
 	
 	public static void main(String[] args) {
 		
@@ -62,12 +65,19 @@ public class Result extends JFrame {
 		resultsInterestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		resultsInterestLabel.setBounds(140, 130, 450, 30);
 		pane.add(resultsInterestLabel);
+		
+		productIconLabel = new JLabel("");
+		productIconLabel.setBounds(50, 180, 200, 250);
+		pane.add(productIconLabel);
 	}
 	
-	//TODO
 	ArrayList<String> categoriesCheckBox = new ArrayList<String>();
 	public void checkBoxResult(String nomeCheckBox) {
 		categoriesCheckBox.add(nomeCheckBox);
 		resultsInterestLabel.setText(categoriesCheckBox.toString());
+	}
+	
+	public void productImageResult(String productImageAddress) {
+		productIconLabel.setIcon(new ImageIcon(productImageAddress));
 	}
 }
