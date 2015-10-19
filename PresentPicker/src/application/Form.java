@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -33,15 +34,15 @@ public class Form extends JFrame {
 	private JTextField ageTextField;
 	private JTextField relationshipTextField;
 	private JComboBox<String> genderComboBox;
-	private JCheckBox musicCheckBox;
-	private JCheckBox movieBookCheckBox;
-	private JCheckBox religionCheckBox;
-	private JCheckBox sportCheckBox;
-	private JCheckBox gameCheckBox;
-	private JCheckBox outdoorCheckBox;
-	private JCheckBox kidsCheckBox;
-	private JCheckBox houseCheckBox;
-	private JCheckBox drinkCheckBox;
+	private JRadioButton musicRadioButton;
+	private JRadioButton movieBookRadioButton;
+	private JRadioButton religionRadioButton;
+	private JRadioButton sportRadioButton;
+	private JRadioButton gameRadioButton;
+	private JRadioButton outdoorRadioButton;
+	private JRadioButton kidsRadioButton;
+	private JRadioButton houseRadioButton;
+	private JRadioButton drinkRadioButton;
 	private JButton searchButton;
 	private JButton cleanButton;
 	
@@ -138,55 +139,55 @@ public class Form extends JFrame {
 		relationshipTextField.setBounds(240, 330, 230, 30);
 		pane.add(relationshipTextField);
 		
-		interestLabel = new JLabel("Interests: ");
+		interestLabel = new JLabel("Main Interest: ");
 		interestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		interestLabel.setBounds(50, 410, 150, 30);
 		pane.add(interestLabel);
 		
-		movieBookCheckBox = new JCheckBox("Movies/Books");
-		movieBookCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		movieBookCheckBox.setBounds(50, 480, 150, 30);
-		pane.add(movieBookCheckBox);
+		movieBookRadioButton = new JRadioButton("Movies/Books");
+		movieBookRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		movieBookRadioButton.setBounds(50, 480, 150, 30);
+		pane.add(movieBookRadioButton);
 		
-		sportCheckBox = new JCheckBox("Sports");
-		sportCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		sportCheckBox.setBounds(50, 530, 150, 30);
-		pane.add(sportCheckBox);
+		sportRadioButton = new JRadioButton("Sports");
+		sportRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		sportRadioButton.setBounds(50, 530, 150, 30);
+		pane.add(sportRadioButton);
 		
-		religionCheckBox = new JCheckBox("Religion");
-		religionCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		religionCheckBox.setBounds(50, 580, 150, 30);
-		pane.add(religionCheckBox);
+		religionRadioButton = new JRadioButton("Religion");
+		religionRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		religionRadioButton.setBounds(50, 580, 150, 30);
+		pane.add(religionRadioButton);
 		
-		kidsCheckBox = new JCheckBox("Kids");
-		kidsCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		kidsCheckBox.setBounds(350, 480, 150, 30);
-		pane.add(kidsCheckBox);
+		kidsRadioButton = new JRadioButton("Kids");
+		kidsRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		kidsRadioButton.setBounds(350, 480, 150, 30);
+		pane.add(kidsRadioButton);
 		
-		outdoorCheckBox = new JCheckBox("Outdoor");
-		outdoorCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		outdoorCheckBox.setBounds(350, 530, 150, 30);
-		pane.add(outdoorCheckBox);
+		outdoorRadioButton = new JRadioButton("Outdoor");
+		outdoorRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		outdoorRadioButton.setBounds(350, 530, 150, 30);
+		pane.add(outdoorRadioButton);
 		
-		houseCheckBox = new JCheckBox("House");
-		houseCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		houseCheckBox.setBounds(350, 580, 150, 30);
-		pane.add(houseCheckBox);
+		houseRadioButton = new JRadioButton("House");
+		houseRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		houseRadioButton.setBounds(350, 580, 150, 30);
+		pane.add(houseRadioButton);
 		
-		gameCheckBox = new JCheckBox("Games");
-		gameCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		gameCheckBox.setBounds(650, 480, 150, 30);
-		pane.add(gameCheckBox);
+		gameRadioButton = new JRadioButton("Games");
+		gameRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		gameRadioButton.setBounds(650, 480, 150, 30);
+		pane.add(gameRadioButton);
 		
-		drinkCheckBox = new JCheckBox("Drink Enthusiastic");
-		drinkCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		drinkCheckBox.setBounds(650, 530, 150, 30);
-		pane.add(drinkCheckBox);
+		drinkRadioButton = new JRadioButton("Drink Enthusiastic");
+		drinkRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		drinkRadioButton.setBounds(650, 530, 150, 30);
+		pane.add(drinkRadioButton);
 		
-		musicCheckBox = new JCheckBox("Music");
-		musicCheckBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		musicCheckBox.setBounds(650, 580, 150, 30);
-		pane.add(musicCheckBox);
+		musicRadioButton = new JRadioButton("Music");
+		musicRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		musicRadioButton.setBounds(650, 580, 150, 30);
+		pane.add(musicRadioButton);
 		
 		cleanButton = new JButton("CLEAN");
 		cleanButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
@@ -199,15 +200,15 @@ public class Form extends JFrame {
 				genderComboBox.setSelectedItem("");
 				ageTextField.setText("");
 				relationshipTextField.setText("");
-				movieBookCheckBox.setSelected(false);
-				sportCheckBox.setSelected(false);
-				religionCheckBox.setSelected(false);
-				kidsCheckBox.setSelected(false);
-				outdoorCheckBox.setSelected(false);
-				houseCheckBox.setSelected(false);
-				gameCheckBox.setSelected(false);
-				drinkCheckBox.setSelected(false);
-				musicCheckBox.setSelected(false);
+				movieBookRadioButton.setSelected(false);
+				sportRadioButton.setSelected(false);
+				religionRadioButton.setSelected(false);
+				kidsRadioButton.setSelected(false);
+				outdoorRadioButton.setSelected(false);
+				houseRadioButton.setSelected(false);
+				gameRadioButton.setSelected(false);
+				drinkRadioButton.setSelected(false);
+				musicRadioButton.setSelected(false);
 				
 			}
 		});
@@ -237,7 +238,7 @@ public class Form extends JFrame {
 				//TODO Action regarding all the checkboxes
 				Result result = new Result();
 						
-				if (movieBookCheckBox.isSelected()) {
+				if (movieBookRadioButton.isSelected()) {
 					BookMovie book = new BookMovie("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
 							+ " same commuter train every morning. She knows it will wait at the same signal each time,"
 							+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
@@ -248,10 +249,10 @@ public class Form extends JFrame {
 							+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
 							"src\\images\\girlOnTrain.jpg", 17.99);
 					
-					result.checkBoxResult(movieBookCheckBox.getText());
-					result.productImageResult(book.getImageProduct());
+					result.checkBoxResult(movieBookRadioButton.getText(), book.getImageProduct(), book.getNameProduct(), 
+							book.getPriceProduct());
 				}
-				
+				/*
 				if (sportCheckBox.isSelected()) {
 					result.checkBoxResult(sportCheckBox.getText());
 				}
@@ -283,6 +284,7 @@ public class Form extends JFrame {
 				if (musicCheckBox.isSelected()) {
 					result.checkBoxResult(musicCheckBox.getText());
 				}
+				*/
 				
 				result.setVisible(true);
 			}
