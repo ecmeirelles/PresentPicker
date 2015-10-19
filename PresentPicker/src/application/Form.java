@@ -3,9 +3,9 @@ package application;
 import java.awt.*;
 import java.awt.event.*;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,6 +45,7 @@ public class Form extends JFrame {
 	private JRadioButton drinkRadioButton;
 	private JButton searchButton;
 	private JButton cleanButton;
+	private ButtonGroup buttonGroup;
 	
 	private String genders[] = {"", "Male", "Female"};
 	public final String FONT_TITTLE = "Andalus";
@@ -52,7 +53,7 @@ public class Form extends JFrame {
 	public final String FONT_BUTTON = "Sylfaen";
 	private static final long serialVersionUID = 1L;
 	
-	Gifted gifted = new Gifted();
+	Gifted gifted = new Gifted();	
 
 	public static void main(String[] args) {
 		
@@ -188,6 +189,18 @@ public class Form extends JFrame {
 		musicRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		musicRadioButton.setBounds(650, 580, 150, 30);
 		pane.add(musicRadioButton);
+		
+		/* Used to enable just one selection at a time */
+		buttonGroup = new ButtonGroup();
+		buttonGroup.add(movieBookRadioButton);
+		buttonGroup.add(sportRadioButton);
+		buttonGroup.add(religionRadioButton);
+		buttonGroup.add(musicRadioButton);
+		buttonGroup.add(drinkRadioButton);
+		buttonGroup.add(outdoorRadioButton);
+		buttonGroup.add(kidsRadioButton);
+		buttonGroup.add(gameRadioButton);
+		buttonGroup.add(houseRadioButton);
 		
 		cleanButton = new JButton("CLEAN");
 		cleanButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
