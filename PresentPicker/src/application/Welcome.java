@@ -64,7 +64,7 @@ public class Welcome extends JFrame {
 		appImageLabel = new JLabel("");
 		appImageLabel.setBounds(50, 170, 512, 512);
 		/* Demonstrate where the image is in the project */
-		appImageLabel.setIcon(new ImageIcon("src\\present-icon.png"));
+		appImageLabel.setIcon(new ImageIcon("src\\images\\present-icon.png"));
 		pane.add(appImageLabel);
 		
 		/* Create a button (Start) and add it into the panel */

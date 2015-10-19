@@ -77,7 +77,7 @@ public class Form extends JFrame {
 		
 		appIconLabel = new JLabel("");
 		appIconLabel.setBounds(20, 20, 64, 64);
-		appIconLabel.setIcon(new ImageIcon("src\\gift-icon.png"));
+		appIconLabel.setIcon(new ImageIcon("src\\images\\gift-icon.png"));
 		pane.add(appIconLabel);
 		
 		appNameLabel = new JLabel("PRESENT PICKER");
