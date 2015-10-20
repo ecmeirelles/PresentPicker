@@ -2,6 +2,7 @@ package application;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.print.Book;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -250,21 +251,63 @@ public class Form extends JFrame {
 				
 				//TODO Action regarding all the checkboxes
 				Result result = new Result();
+				
+				switch(genderComboBox.getSelectedIndex()) {
+					/* Nothing */
+					case 0:
+						break;
 						
-				if (movieBookRadioButton.isSelected()) {
-					BookMovie book = new BookMovie("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
-							+ " same commuter train every morning. She knows it will wait at the same signal each time,"
-							+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
-							+ " who live in one of the houses. 'Jess and Jason', she calls them. Their life - as she "
-							+ "sees it - is perfect. If only Rachel could be that happy. And then she sees something "
-							+ "shocking. It's only a minute until the train moves on, but it's enough. Now everything's"
-							+ " changed. Now Rachel has a chance to become a part of the lives she's only watched from"
-							+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
-							"src\\images\\girlOnTrain.jpg", 17.99);
-					
-					result.checkBoxResult(movieBookRadioButton.getText(), book.getImageProduct(), book.getNameProduct(), 
-							book.getPriceProduct());
+					/* Male */
+					case 1:
+						break;
+						
+					/* Female */
+					case 2:
+						if (movieBookRadioButton.isSelected()) {
+							BookMovie book1 = new BookMovie("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
+									+ " same commuter train every morning. She knows it will wait at the same signal each time,"
+									+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
+									+ " who live in one of the houses. 'Jess and Jason', she calls them. Their life - as she "
+									+ "sees it - is perfect. If only Rachel could be that happy. And then she sees something "
+									+ "shocking. It's only a minute until the train moves on, but it's enough. Now everything's"
+									+ " changed. Now Rachel has a chance to become a part of the lives she's only watched from"
+									+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
+									"src\\images\\girlOnTrain.jpg", 17.99);
+							
+							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
+									book1.getPriceProduct());
+							
+							BookMovie book2 = new BookMovie("Stephenie Meyer", 442, "Twilight Reimagined", "Celebrate the tenth "
+									+ "anniversary of Twilight ! This special tenth anniversary edition includes the original novel "
+									+ "as well as exclusive new bonus content. Readers will relish experiencing the iconic love story "
+									+ "of Bella and Edward again . . . or for the very first time. Deeply romantic and extraordinarily "
+									+ "suspenseful,Twilight has enraptured millions of readers since its first publication in 2005 and "
+									+ "has become a modern classic, redefining genres within young adult literature and inspiring a "
+									+ "phenomenon that has had readers yearning for more. The novel was a Sunday Times and New York "
+									+ "Times bestseller. The Twilight Saga, which also includes New Moon, Eclipse, Breaking Dawn, The "
+									+ "Short Second Life of Bree Tanner: An Eclipse Novella, and The Twilight Saga: The Official "
+									+ "Illustrated Guide , has sold nearly 155 million copies worldwide.", "Eason", 
+									"src\\images\\twilight.jpg", 19.99);
+							
+							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
+									book2.getPriceProduct());
+							
+							BookMovie book3 = new BookMovie("Jacky Colliss Harvey", 240, "Red", "In her history of red hair and "
+									+ "red-headedness, Jacky Colliss Harvey begins by tracing the redhead gene in prehistory, as it made "
+									+ "its way out of Africa with the early human diaspora to emerge under northern skies. She goes on to "
+									+ "explore red hair in the ancient world, the prejudice manifested against it across medieval Europe, "
+									+ "and red hair during the Renaissance, when it was seen as both an indicator of Jewishness and the "
+									+ "height of fashion in Protestant England, thanks to Elizabeth I. She also examines depictions of red "
+									+ "hair in art and literature, looks at modern medicine and the genetic decoding of red hair, and "
+									+ "considers red hair in contemporary culture, from advertising to 'gingerism' and bullying.", "Eason",
+									"src\\images\\red.jpg", 25.50);
+							
+							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
+									book3.getPriceProduct());
+						}
+						break;
 				}
+				
 				/*
 				if (sportCheckBox.isSelected()) {
 					result.checkBoxResult(sportCheckBox.getText());
