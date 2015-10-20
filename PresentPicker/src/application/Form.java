@@ -2,7 +2,6 @@ package application;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.print.Book;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -246,10 +245,7 @@ public class Form extends JFrame {
 				System.out.println("Gender: " + gifted.getGenderGifted());
 				System.out.println("Age: " + gifted.getAgeGifted());
 				System.out.println("Relationship: " + gifted.getRelationshipGifted());
-				
-				Form.this.setVisible(false);		
-				
-				//TODO Action regarding all the checkboxes
+					
 				Result result = new Result();
 				
 				switch(genderComboBox.getSelectedIndex()) {
@@ -259,6 +255,55 @@ public class Form extends JFrame {
 						
 					/* Male */
 					case 1:
+						if (movieBookRadioButton.isSelected()) {
+							BookMovie book1 = new BookMovie("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
+									+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
+									+ " and talent for investigation will never respect boundaries of state or status. He is a campaigning"
+									+ " journalist. Mikael Blomkvist. A lone wolf whose integrity and championing of the truth bring him "
+									+ "time and again to the brink of unemployment - and prosecution. The call comes in late at night: "
+									+ "a superhacker has gained access to critical, top secret U.S. intelligence. Blomkvist knows only "
+									+ "one person who could crack the best security systems in the world. This case has all the hallmarks "
+									+ "of Salander. She is accused of acting without reason, taking risks just because she can, but "
+									+ "though they have lost touch, Blomkvist knows Lisbeth better than that. There must be something "
+									+ "deeper at the heart of this - maybe even the scoop that Millennium magazine so desperately needs "
+									+ "for its survival. A tangled web of truth that someone is prepared to kill to protect.", "Eason", 
+									"src\\images\\girlSpiderWeb.jpg", 16.99);
+							
+							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
+									book1.getPriceProduct());
+							
+							BookMovie book2 = new BookMovie("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
+									+ "of Ireland's most beloved rugby player: Peter Stringer When Peter Stringer played youth rugby, he "
+									+ "was so small that people told his parents he shouldn't be allowed on the pitch. Fortunately for "
+									+ "Munster and for Ireland, they paid no attention. Over 200 provincial caps and 98 international caps "
+									+ "later, Stringer is a legend. Since making his Munster debut in 1998, his lightning-quick passing, "
+									+ "sniping breaks and brave defending have electrified fans - never more so than when he deceived the "
+									+ "entire Biarritz team at a scrum to sneak in for the try that brought Munster its first Heineken Cup "
+									+ "in 2006. In Ireland's breakthrough season of 2009, his man-of-the-match performance at Murrayfield "
+									+ "helped overturn a late deficit en route to the Six Nations Grand Slam. Now, for the first time, Peter "
+									+ "Stringer tells his own story - a story of overcoming the odds, and a story every Irish rugby fan will "
+									+ "want to read.", "Eason", "src\\images\\pullingStrings.jpg", 22.99);
+							
+							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
+									book2.getPriceProduct());
+							
+							BookMovie book3 = new BookMovie("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
+									+ "assumed missing Dublin woman Elaine O'Hara had ended her own life. But after her remains were found "
+									+ "garda discovered that Elaine was in thrall to a man who had spent years grooming her to let him kill "
+									+ "her. That man was Graham Dwyer, a married father of three and partner in a Dublin architecture "
+									+ "practice. Almost the Perfect Murder details the exhaustive investigation - one of the most complex "
+									+ "and chilling in Irish criminal justice history - that allowed garda to build a case against Dwyer. "
+									+ "And it outlines the twists and turns - both in the courtroom and behind the scenes - during the "
+									+ "dramatic trial that followed. Almost the Perfect Murder contains startling new material based on "
+									+ "extensive research conducted especially for the book. This includes fresh insights into the garda "
+									+ "investigation and background information on Graham Dwyer. This is the definitive account of the case "
+									+ "that gripped the nation by Ireland's leading crime journalist, Paul Williams. 'An example of "
+									+ "doggedness and tenacious police work, which saw that justice was done, and seen to be done' Irish "
+									+ "Independent.", "Eason", "src\\images\\perfectMurder.jpg", 19.99);
+							
+							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
+									book3.getPriceProduct());
+						}						
 						break;
 						
 					/* Female */
@@ -342,6 +387,7 @@ public class Form extends JFrame {
 				}
 				*/
 				
+				Form.this.setVisible(false);
 				result.setVisible(true);
 			}
 		});

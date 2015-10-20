@@ -1,7 +1,9 @@
 package application;
 
+import java.awt.Cursor;
 import java.awt.Font;
-import java.util.ArrayList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -30,9 +32,6 @@ public class Result extends JFrame {
 	private JLabel productIconLabel3;
 	private JLabel productNameLabel3;
 	private JLabel productPriceLabel3;
-	
-	private int increment;
-	private int i = 0;
 	
 	public static void main(String[] args) {
 		
@@ -77,56 +76,63 @@ public class Result extends JFrame {
 		pane.add(resultsInterestLabel);
 
 		productIconLabel1 = new JLabel("");
-		productIconLabel1.setBounds(50, 180, 200, 250);
+		productIconLabel1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Result.this.setVisible(false);
+				new Detail().setVisible(true);
+			}
+		});
+		productIconLabel1.setBounds(50, 180, 220, 250);
 		productIconLabel1.setIcon(new ImageIcon(""));
 		productIconLabel1.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productIconLabel1);
 		
 		productNameLabel1 = new JLabel("");
 		productNameLabel1.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productNameLabel1.setBounds(50, 430, 200, 30);
+		productNameLabel1.setBounds(50, 430, 220, 30);
 		productNameLabel1.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productNameLabel1);
 		
 		productPriceLabel1 = new JLabel("");
 		productPriceLabel1.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productPriceLabel1.setBounds(50, 460, 200, 30);
+		productPriceLabel1.setBounds(50, 460, 220, 30);
 		productPriceLabel1.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productPriceLabel1);
 		
 		productIconLabel2 = new JLabel("");
-		productIconLabel2.setBounds(350, 180, 200, 250);
+		productIconLabel2.setBounds(350, 180, 220, 250);
 		productIconLabel2.setIcon(new ImageIcon(""));
 		productIconLabel2.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productIconLabel2);
 		
 		productNameLabel2 = new JLabel("");
 		productNameLabel2.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productNameLabel2.setBounds(350, 430, 200, 30);
+		productNameLabel2.setBounds(350, 430, 220, 30);
 		productNameLabel2.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productNameLabel2);
 		
 		productPriceLabel2 = new JLabel("");
 		productPriceLabel2.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productPriceLabel2.setBounds(350, 460, 200, 30);
+		productPriceLabel2.setBounds(350, 460, 220, 30);
 		productPriceLabel2.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productPriceLabel2);
 		
 		productIconLabel3 = new JLabel("");
-		productIconLabel3.setBounds(650, 180, 200, 250);
+		productIconLabel3.setBounds(650, 180, 220, 250);
 		productIconLabel3.setIcon(new ImageIcon(""));
 		productIconLabel3.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productIconLabel3);
 		
 		productNameLabel3 = new JLabel("");
 		productNameLabel3.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productNameLabel3.setBounds(650, 430, 200, 30);
+		productNameLabel3.setBounds(650, 430, 220, 30);
 		productNameLabel3.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productNameLabel3);
 		
 		productPriceLabel3 = new JLabel("");
 		productPriceLabel3.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		productPriceLabel3.setBounds(650, 460, 200, 30);
+		productPriceLabel3.setBounds(650, 460, 220, 30);
 		productPriceLabel3.setHorizontalAlignment(SwingConstants.CENTER);
 		pane.add(productPriceLabel3);
 	}
