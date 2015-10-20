@@ -35,7 +35,7 @@ public class Form extends JFrame {
 	private JTextField relationshipTextField;
 	private JComboBox<String> genderComboBox;
 	private JRadioButton musicRadioButton;
-	private JRadioButton movieBookRadioButton;
+	private JRadioButton bookRadioButton;
 	private JRadioButton religionRadioButton;
 	private JRadioButton sportRadioButton;
 	private JRadioButton gameRadioButton;
@@ -145,10 +145,10 @@ public class Form extends JFrame {
 		interestLabel.setBounds(50, 410, 150, 30);
 		pane.add(interestLabel);
 		
-		movieBookRadioButton = new JRadioButton("Movies/Books");
-		movieBookRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		movieBookRadioButton.setBounds(50, 480, 150, 30);
-		pane.add(movieBookRadioButton);
+		bookRadioButton = new JRadioButton("Books");
+		bookRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
+		bookRadioButton.setBounds(50, 480, 150, 30);
+		pane.add(bookRadioButton);
 		
 		sportRadioButton = new JRadioButton("Sports");
 		sportRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
@@ -192,7 +192,7 @@ public class Form extends JFrame {
 		
 		/* Used to enable just one selection at a time */
 		buttonGroup = new ButtonGroup();
-		buttonGroup.add(movieBookRadioButton);
+		buttonGroup.add(bookRadioButton);
 		buttonGroup.add(sportRadioButton);
 		buttonGroup.add(religionRadioButton);
 		buttonGroup.add(musicRadioButton);
@@ -213,7 +213,7 @@ public class Form extends JFrame {
 				genderComboBox.setSelectedItem("");
 				ageTextField.setText("");
 				relationshipTextField.setText("");
-				movieBookRadioButton.setSelected(false);
+				bookRadioButton.setSelected(false);
 				sportRadioButton.setSelected(false);
 				religionRadioButton.setSelected(false);
 				kidsRadioButton.setSelected(false);
@@ -255,7 +255,7 @@ public class Form extends JFrame {
 						
 					/* Male */
 					case 1:
-						if (movieBookRadioButton.isSelected()) {
+						if (bookRadioButton.isSelected()) {
 							Book book1 = new Book("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
 									+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
 									+ " and talent for investigation will never respect boundaries of state or status. He is a campaigning"
@@ -269,7 +269,7 @@ public class Form extends JFrame {
 									+ "for its survival. A tangled web of truth that someone is prepared to kill to protect.", "Eason", 
 									"src\\images\\girlSpiderWeb.jpg", 16.99);
 							
-							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
+							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
 							
 							Book book2 = new Book("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
@@ -308,7 +308,7 @@ public class Form extends JFrame {
 						
 					/* Female */
 					case 2:
-						if (movieBookRadioButton.isSelected()) {
+						if (bookRadioButton.isSelected()) {
 							Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
 									+ " same commuter train every morning. She knows it will wait at the same signal each time,"
 									+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
@@ -319,7 +319,7 @@ public class Form extends JFrame {
 									+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
 									"src\\images\\girlOnTrain.jpg", 17.99);
 							
-							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
+							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
 							
 							Book book2 = new Book("Stephenie Meyer", 442, "Twilight Reimagined", "Celebrate the tenth "
