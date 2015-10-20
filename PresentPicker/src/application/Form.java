@@ -14,7 +14,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import category.BookMovie;
+import category.Book;
 import gifted.Gifted;
 
 public class Form extends JFrame {
@@ -256,7 +256,7 @@ public class Form extends JFrame {
 					/* Male */
 					case 1:
 						if (movieBookRadioButton.isSelected()) {
-							BookMovie book1 = new BookMovie("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
+							Book book1 = new Book("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
 									+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
 									+ " and talent for investigation will never respect boundaries of state or status. He is a campaigning"
 									+ " journalist. Mikael Blomkvist. A lone wolf whose integrity and championing of the truth bring him "
@@ -272,7 +272,7 @@ public class Form extends JFrame {
 							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
 							
-							BookMovie book2 = new BookMovie("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
+							Book book2 = new Book("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
 									+ "of Ireland's most beloved rugby player: Peter Stringer When Peter Stringer played youth rugby, he "
 									+ "was so small that people told his parents he shouldn't be allowed on the pitch. Fortunately for "
 									+ "Munster and for Ireland, they paid no attention. Over 200 provincial caps and 98 international caps "
@@ -287,7 +287,7 @@ public class Form extends JFrame {
 							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
 									book2.getPriceProduct());
 							
-							BookMovie book3 = new BookMovie("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
+							Book book3 = new Book("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
 									+ "assumed missing Dublin woman Elaine O'Hara had ended her own life. But after her remains were found "
 									+ "garda discovered that Elaine was in thrall to a man who had spent years grooming her to let him kill "
 									+ "her. That man was Graham Dwyer, a married father of three and partner in a Dublin architecture "
@@ -309,7 +309,7 @@ public class Form extends JFrame {
 					/* Female */
 					case 2:
 						if (movieBookRadioButton.isSelected()) {
-							BookMovie book1 = new BookMovie("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
+							Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
 									+ " same commuter train every morning. She knows it will wait at the same signal each time,"
 									+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
 									+ " who live in one of the houses. 'Jess and Jason', she calls them. Their life - as she "
@@ -322,7 +322,7 @@ public class Form extends JFrame {
 							result.radioButtonResult1(movieBookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
 							
-							BookMovie book2 = new BookMovie("Stephenie Meyer", 442, "Twilight Reimagined", "Celebrate the tenth "
+							Book book2 = new Book("Stephenie Meyer", 442, "Twilight Reimagined", "Celebrate the tenth "
 									+ "anniversary of Twilight ! This special tenth anniversary edition includes the original novel "
 									+ "as well as exclusive new bonus content. Readers will relish experiencing the iconic love story "
 									+ "of Bella and Edward again . . . or for the very first time. Deeply romantic and extraordinarily "
@@ -337,7 +337,7 @@ public class Form extends JFrame {
 							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
 									book2.getPriceProduct());
 							
-							BookMovie book3 = new BookMovie("Jacky Colliss Harvey", 240, "Red", "In her history of red hair and "
+							Book book3 = new Book("Jacky Colliss Harvey", 240, "Red", "In her history of red hair and "
 									+ "red-headedness, Jacky Colliss Harvey begins by tracing the redhead gene in prehistory, as it made "
 									+ "its way out of Africa with the early human diaspora to emerge under northern skies. She goes on to "
 									+ "explore red hair in the ancient world, the prejudice manifested against it across medieval Europe, "
