@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import category.Book;
+import category.Religion;
 import gifted.Gifted;
 
 public class Form extends JFrame {
@@ -303,7 +304,30 @@ public class Form extends JFrame {
 							
 							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
 									book3.getPriceProduct());
-						}						
+						}
+						
+						else if (religionRadioButton.isSelected()) {
+							Religion religion1 = new Religion("30 cm", "St Joseph Statue", "", "Veritas", "src\\images\\stJoseph.jpg", 34.95);
+							
+							result.radioButtonResult1(bookRadioButton.getText(), religion1.getImageProduct(), religion1.getNameProduct(), 
+									religion1.getPriceProduct());
+							
+							Religion religion2 = new Religion("35 cm", "Olive Wood Crucifix", "", "Veritas", "src\\images\\oliveCrucifix.png", 
+									25.00);
+							
+							result.radioButtonResult2(religion2.getImageProduct(), religion2.getNameProduct(), 
+									religion2.getPriceProduct());
+							
+							Religion religion3 = new Religion("", "CD Table of the World", "In this new recording from Tony Alonso, you will find "
+									+ "ritual songs of mission and ministry that challenge us to take the Gospel vision from the table of Christ "
+									+ "Jesus to the table of the world. Songs like 'How Good It Is' and 'I Will Arise' portray a message of "
+									+ "forgiveness, reconciliation, peace, and unity. These themes are also reflected in the usage of diverse "
+									+ "languages and music from other cultures throughout this recording. Many of the songs are bilingual, "
+									+ "incorporating both Spanish and English.", "Veritas", "src\\images\\tableWorld.jpg", 14.95);
+							
+							result.radioButtonResult3(religion3.getImageProduct(), religion3.getNameProduct(), 
+									religion3.getPriceProduct());
+						}
 						break;
 						
 					/* Female */
@@ -349,6 +373,26 @@ public class Form extends JFrame {
 							
 							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
 									book3.getPriceProduct());
+						}
+						
+						else if (religionRadioButton.isSelected()) {
+							Religion religion1 = new Religion("", "My Guardian Angel", "Enchanting pearl oval pendant with silver chain "
+									+ "comes gift-boxed.", "Veritas", "src\\images\\guardianAngel.png", 24.95);
+							
+							result.radioButtonResult1(bookRadioButton.getText(), religion1.getImageProduct(), religion1.getNameProduct(), 
+									religion1.getPriceProduct());
+							
+							Religion religion2 = new Religion("", "Glass Rosary Beads", "Color: Green", "Veritas", 
+									"src\\images\\rosary.jpg", 6.95);
+							
+							result.radioButtonResult2(religion2.getImageProduct(), religion2.getNameProduct(), 
+									religion2.getPriceProduct());
+							
+							Religion religion3 = new Religion("", "St John Paul II Prayer Card", "", "Veritas", "src\\images\\prayerCard.jpg",
+									6.50);
+							
+							result.radioButtonResult3(religion3.getImageProduct(), religion3.getNameProduct(), 
+									religion3.getPriceProduct());
 						}
 						break;
 				}
