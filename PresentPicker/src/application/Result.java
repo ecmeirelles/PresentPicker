@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class Result extends JFrame {
@@ -20,9 +21,18 @@ public class Result extends JFrame {
 	private JLabel appIconLabel;
 	private JLabel appNameLabel;
 	private JLabel resultsInterestLabel;
-	private JLabel productIconLabel;
-	private JLabel productNameLabel;
-	private JLabel productPriceLabel;
+	private JLabel productIconLabel1;
+	private JLabel productNameLabel1;
+	private JLabel productPriceLabel1;
+	private JLabel productIconLabel2;
+	private JLabel productNameLabel2;
+	private JLabel productPriceLabel2;
+	private JLabel productIconLabel3;
+	private JLabel productNameLabel3;
+	private JLabel productPriceLabel3;
+	
+	private int increment;
+	private int i = 0;
 	
 	public static void main(String[] args) {
 		
@@ -48,7 +58,7 @@ public class Result extends JFrame {
 		
 		appIconLabel = new JLabel("");
 		appIconLabel.setBounds(20, 20, 64, 64);
-		appIconLabel.setIcon(new ImageIcon("src\\gift-icon.png"));
+		appIconLabel.setIcon(new ImageIcon("src\\images\\gift-icon.png"));
 		pane.add(appIconLabel);
 		
 		appNameLabel = new JLabel("PRESENT PICKER");
@@ -65,19 +75,81 @@ public class Result extends JFrame {
 		resultsInterestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		resultsInterestLabel.setBounds(140, 130, 450, 30);
 		pane.add(resultsInterestLabel);
+
+		productIconLabel1 = new JLabel("");
+		productIconLabel1.setBounds(50, 180, 200, 250);
+		productIconLabel1.setIcon(new ImageIcon(""));
+		productIconLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productIconLabel1);
 		
-		productIconLabel = new JLabel("");
-		productIconLabel.setBounds(50, 180, 200, 250);
-		pane.add(productIconLabel);
+		productNameLabel1 = new JLabel("");
+		productNameLabel1.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productNameLabel1.setBounds(50, 430, 200, 30);
+		productNameLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productNameLabel1);
+		
+		productPriceLabel1 = new JLabel("");
+		productPriceLabel1.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productPriceLabel1.setBounds(50, 460, 200, 30);
+		productPriceLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productPriceLabel1);
+		
+		productIconLabel2 = new JLabel("");
+		productIconLabel2.setBounds(350, 180, 200, 250);
+		productIconLabel2.setIcon(new ImageIcon(""));
+		productIconLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productIconLabel2);
+		
+		productNameLabel2 = new JLabel("");
+		productNameLabel2.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productNameLabel2.setBounds(350, 430, 200, 30);
+		productNameLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productNameLabel2);
+		
+		productPriceLabel2 = new JLabel("");
+		productPriceLabel2.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productPriceLabel2.setBounds(350, 460, 200, 30);
+		productPriceLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productPriceLabel2);
+		
+		productIconLabel3 = new JLabel("");
+		productIconLabel3.setBounds(650, 180, 200, 250);
+		productIconLabel3.setIcon(new ImageIcon(""));
+		productIconLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productIconLabel3);
+		
+		productNameLabel3 = new JLabel("");
+		productNameLabel3.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productNameLabel3.setBounds(650, 430, 200, 30);
+		productNameLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productNameLabel3);
+		
+		productPriceLabel3 = new JLabel("");
+		productPriceLabel3.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		productPriceLabel3.setBounds(650, 460, 200, 30);
+		productPriceLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+		pane.add(productPriceLabel3);
 	}
 	
-	ArrayList<String> categoriesCheckBox = new ArrayList<String>();
-	public void checkBoxResult(String nomeCheckBox) {
-		categoriesCheckBox.add(nomeCheckBox);
-		resultsInterestLabel.setText(categoriesCheckBox.toString());
+	public void radioButtonResult1(String nameRadioButton, String productImageAddress, String productName, 
+			double productPrice) {
+		resultsInterestLabel.setText(nameRadioButton);
+		productIconLabel1.setIcon(new ImageIcon(productImageAddress));
+		productNameLabel1.setText(productName);
+		productPriceLabel1.setText(Double.toString(productPrice) + " €");
 	}
 	
-	public void productImageResult(String productImageAddress) {
-		productIconLabel.setIcon(new ImageIcon(productImageAddress));
+	public void radioButtonResult2(String productImageAddress, String productName, 
+			double productPrice) {
+		productIconLabel2.setIcon(new ImageIcon(productImageAddress));
+		productNameLabel2.setText(productName);
+		productPriceLabel2.setText(Double.toString(productPrice) + " €");
+	}
+	
+	public void radioButtonResult3(String productImageAddress, String productName, 
+			double productPrice) {
+		productIconLabel3.setIcon(new ImageIcon(productImageAddress));
+		productNameLabel3.setText(productName);
+		productPriceLabel3.setText(Double.toString(productPrice) + " €");
 	}
 }
