@@ -17,3 +17,6 @@ hs_err_pid*
 /bin
 .settings
 .gitignore
+
+Thumbs.db
+/images/Thumbs.db
