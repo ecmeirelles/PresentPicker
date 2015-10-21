@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 import category.Book;
 import category.Religion;
+import category.Sport;
 import gifted.Gifted;
 
 public class Form extends JFrame {
@@ -306,6 +307,34 @@ public class Form extends JFrame {
 									book3.getPriceProduct());
 						}
 						
+						else if (sportRadioButton.isSelected()) {
+							Sport sport1 = new Sport("Rugby", "S/M/L/XL/XXL/XXXL", "Canterbury Ireland RFU", "The Canterbury Ireland RFU "
+									+ "Home Pro Shirt combines Canterburys classic loop neckline with a lightweight wicking fabric for all "
+									+ "round comfort, complete with 3D injection moulded Shamrock adorning the chest rounding off the look "
+									+ "perfectly. ", "Sports Direct", "src\\images\\rugbyTShirt.jpg", 62.39);
+							
+							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
+									sport1.getPriceProduct());
+							
+							Sport sport2 = new Sport("Martial Art", "One size", "Lonsdale M Core Headguard", "The Lonsdale M Core Headguard "
+									+ "is perfect for sparring sessions, has an L Core front designed for maximum cushioning by using multiple"
+									+ " layers of closed cell foam and M Core sides for maximum breathability and keep you cooler for longer."
+									+ " The Lonsdale Headguard is a one size fits all with an adjustable hook and loop tape fastening.", 
+									"Sports Direct", "src\\images\\headguard.jpg", 11.99);
+							
+							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
+									sport2.getPriceProduct());
+							
+							Sport sport3 = new Sport("Football", "6 to 13", "Adidas Goletto FG", "Get a comfortable fit with the adidas "
+									+ "Goletto FG Mens Football Boots thanks to the padded and shaped ankle collar with cushioned foam "
+									+ "insole, whilst the full laced front helps to secure the foot in place. These Football Boots have a "
+									+ "stitched forefoot for increased ball control and the moulded studs for increased traction and support "
+									+ "on firm ground.", "Sports Direct", "src\\images\\footballBoots.jpg", 31.20);
+							
+							result.radioButtonResult3(sport3.getImageProduct(), sport3.getNameProduct(), 
+									sport3.getPriceProduct());
+						}
+						
 						else if (religionRadioButton.isSelected()) {
 							Religion religion1 = new Religion("30 cm", "St Joseph Statue", "", "Veritas", "src\\images\\stJoseph.jpg", 34.95);
 							
@@ -373,6 +402,34 @@ public class Form extends JFrame {
 							
 							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
 									book3.getPriceProduct());
+						}
+						
+						else if (sportRadioButton.isSelected()) {
+							Sport sport1 = new Sport("Swimming", "XL", "Slazenger Tankini Set", "The Slazenger Tankini Set offers a comfortable"
+									+ " fit for your swim, whilst still offering a sporty and stylish look. This ladies tankini set is a two"
+									+ " piece set with a short style bottoms and full length tankini top both with contrasting piping and the"
+									+ " Slazenger logo. ", "Sports Direct", "src\\images\\tankini.jpg", 6.59);
+							
+							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
+									sport1.getPriceProduct());
+							
+							Sport sport2 = new Sport("Cricket", "H/SH", "Slazenger V100 Advance", "This Slazenger V100 Advance Cricket Bat is"
+									+ " perfect for beginners who want to perfect a wide range of shots due to the OctoPlus grip, tapered toe"
+									+ " to promote the favoured stance and the Kashmir willow construction provides long lasting durability. "
+									+ "This Slazenger cricket bat has an OctoPlus grip to give you the confidence to play the shots you want"
+									+ " whilst the Slazenger branding completes the look.", "Sports Direct", "src\\images\\cricketBat.jpg", 
+									18.59);
+							
+							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
+									sport2.getPriceProduct());
+							
+							Sport sport3 = new Sport("Running", "XXS/XS/S/M", "Karrimor Xlite Sports", "This Sports Bra has an elasticated "
+									+ "chest band for a secure fit, as well as mesh panels for breathability. This Running Top also features"
+									+ " a V Neck design and a racer back for freedom of movement and a great look.", "Sports Direct", 
+									"src\\images\\xliteRun.jpg", 8.39);
+							
+							result.radioButtonResult3(sport3.getImageProduct(), sport3.getNameProduct(), 
+									sport3.getPriceProduct());
 						}
 						
 						else if (religionRadioButton.isSelected()) {
