@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -68,6 +69,7 @@ public class Result extends JFrame {
 		appNameLabel = new JLabel("Present Picker");
 		/* Set font attributes to label */
 		appNameLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 24));
+		appNameLabel.setForeground(new Color(7, 168, 88));
 		appNameLabel.setBounds(100, 40, 250, 30);
 		pane.add(appNameLabel);
 		

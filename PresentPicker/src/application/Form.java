@@ -30,19 +30,17 @@ public class Form extends JFrame {
 	private JLabel appIconLabel;
 	private JLabel appNameLabel;
 	private JLabel formDescriptionLabel;
+	private JLabel backLabel;
 	private JTextField firstNameTextField;
 	private JTextField lastNameTextField;
 	private JTextField ageTextField;
 	private JComboBox<String> genderComboBox;
-	private JRadioButton musicRadioButton;
 	private JRadioButton bookRadioButton;
 	private JRadioButton religionRadioButton;
 	private JRadioButton sportRadioButton;
 	private JRadioButton gameRadioButton;
 	private JRadioButton outdoorRadioButton;
 	private JRadioButton kidsRadioButton;
-	private JRadioButton houseRadioButton;
-	private JRadioButton drinkRadioButton;
 	private JButton searchButton;
 	private JButton cleanButton;
 	private ButtonGroup buttonGroup;
@@ -92,131 +90,131 @@ public class Form extends JFrame {
 		appNameLabel = new JLabel("Present Picker");
 		/* Set font attributes to label */
 		appNameLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 24));
+		appNameLabel.setForeground(new Color(7, 168, 88));
 		appNameLabel.setBounds(100, 40, 250, 30);
 		pane.add(appNameLabel);
+		
+		/* Create a label which will allow the user to go back to the previous page */
+		backLabel = new JLabel("Previous Page");
+		/* When the user clicks in the label the current page becomes invisible and the previous one (Welcome)
+		 * becomes visible */
+		backLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Form.this.setVisible(false);
+				new Welcome().setVisible(true);
+			}
+		});
+		
+		backLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		backLabel.setIcon(new ImageIcon("src\\images\\back.png"));
+		backLabel.setBounds(30, 100, 200, 30);
+		pane.add(backLabel);
 		
 		/* Create an informational label and add it into the panel */
 		formDescriptionLabel = new JLabel("We need some information regarding the gifted...");
 		formDescriptionLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		formDescriptionLabel.setBounds(50, 130, 380, 30);
+		formDescriptionLabel.setBounds(50, 200, 380, 30);
 		pane.add(formDescriptionLabel);
 		
 		/* Create a label (First Name: ) and add it into the panel */
 		firstNameLabel = new JLabel("First Name: ");
 		firstNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		firstNameLabel.setBounds(50, 180, 100, 30);
+		firstNameLabel.setBounds(50, 270, 100, 30);
 		pane.add(firstNameLabel);
 		
 		/* Create a text field asking for first name and add it into the panel */
 		firstNameTextField = new JTextField();
 		firstNameTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		firstNameTextField.setBounds(170, 180, 300, 30);
+		firstNameTextField.setBounds(170, 270, 300, 30);
 		pane.add(firstNameTextField);
 		
 		/* Create a label (Last Name: ) and add it into the panel */
 		lastNameLabel = new JLabel("Last Name: ");
 		lastNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		lastNameLabel.setBounds(520, 180, 100, 30);
+		lastNameLabel.setBounds(520, 270, 100, 30);
 		pane.add(lastNameLabel);
 		
 		/* Create a text field asking for last name and add it into the panel */
 		lastNameTextField = new JTextField();
 		lastNameTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		lastNameTextField.setBounds(620, 180, 300, 30);
+		lastNameTextField.setBounds(620, 270, 300, 30);
 		pane.add(lastNameTextField);
 		
 		/* Create a label (Gender: ) and add it into the panel */
 		genderLabel = new JLabel("Gender: ");
 		genderLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		genderLabel.setBounds(50, 250, 100, 30);
+		genderLabel.setBounds(50, 340, 100, 30);
 		pane.add(genderLabel);
 		
 		/* Create a combo box asking for gender and add it into the panel */
 		genderComboBox = new JComboBox<String>(genders);
 		genderComboBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		genderComboBox.setBounds(170, 250, 300, 30);
+		genderComboBox.setBounds(170, 340, 300, 30);
 		pane.add(genderComboBox);
 		
 		/* Create a label (Age: ) and add it into the panel */
 		ageLabel = new JLabel("Age: ");
 		ageLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		ageLabel.setBounds(520, 250, 100, 30);
+		ageLabel.setBounds(520, 340, 100, 30);
 		pane.add(ageLabel);
 		
 		/* Create a text field asking for age and add it into the panel */
 		ageTextField = new JTextField();
 		ageTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		ageTextField.setBounds(620, 250, 100, 30);
+		ageTextField.setBounds(620, 340, 100, 30);
 		pane.add(ageTextField);
 		
 		/* Create a label (Main Interest: ) and add it into the panel */
 		interestLabel = new JLabel("Main Interest: ");
 		interestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		interestLabel.setBounds(50, 330, 150, 30);
+		interestLabel.setBounds(50, 410, 150, 30);
 		pane.add(interestLabel);
 		
 		/* Create a radio button (Books) and add it into the panel */
 		bookRadioButton = new JRadioButton("Books");
 		bookRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		bookRadioButton.setBounds(50, 480, 150, 30);
+		bookRadioButton.setBounds(80, 480, 150, 30);
 		pane.add(bookRadioButton);
 		
-		/* Create a radio button (Books) and add it into the panel */
+		/* Create a radio button (Sports) and add it into the panel */
 		sportRadioButton = new JRadioButton("Sports");
 		sportRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		sportRadioButton.setBounds(50, 530, 150, 30);
+		sportRadioButton.setBounds(80, 530, 150, 30);
 		pane.add(sportRadioButton);
 		
-		/* Create a radio button (Books) and add it into the panel */
+		/* Create a radio button (Religion) and add it into the panel */
 		religionRadioButton = new JRadioButton("Religion");
 		religionRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		religionRadioButton.setBounds(50, 580, 150, 30);
+		religionRadioButton.setBounds(380, 480, 150, 30);
 		pane.add(religionRadioButton);
 		
-		/* Create a radio button (Books) and add it into the panel */
+		/* Create a radio button (Kids) and add it into the panel */
 		kidsRadioButton = new JRadioButton("Kids");
 		kidsRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		kidsRadioButton.setBounds(350, 480, 150, 30);
+		kidsRadioButton.setBounds(380, 530, 150, 30);
 		pane.add(kidsRadioButton);
 		
-		/* Create a radio button (Books) and add it into the panel */
+		/* Create a radio button (Outdoor) and add it into the panel */
 		outdoorRadioButton = new JRadioButton("Outdoor");
 		outdoorRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		outdoorRadioButton.setBounds(350, 530, 150, 30);
+		outdoorRadioButton.setBounds(680, 480, 150, 30);
 		pane.add(outdoorRadioButton);
 		
-		houseRadioButton = new JRadioButton("House");
-		houseRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		houseRadioButton.setBounds(350, 580, 150, 30);
-		pane.add(houseRadioButton);
-		
-		/* Create a radio button (Books) and add it into the panel */
+		/* Create a radio button (Games) and add it into the panel */
 		gameRadioButton = new JRadioButton("Games");
 		gameRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		gameRadioButton.setBounds(650, 480, 150, 30);
+		gameRadioButton.setBounds(680, 530, 150, 30);
 		pane.add(gameRadioButton);
-		
-		drinkRadioButton = new JRadioButton("Drink Enthusiastic");
-		drinkRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		drinkRadioButton.setBounds(650, 530, 150, 30);
-		pane.add(drinkRadioButton);
-		
-		musicRadioButton = new JRadioButton("Music");
-		musicRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		musicRadioButton.setBounds(650, 580, 150, 30);
-		pane.add(musicRadioButton);
 		
 		/* Used to enable just one selection at a time */
 		buttonGroup = new ButtonGroup();
 		buttonGroup.add(bookRadioButton);
 		buttonGroup.add(sportRadioButton);
 		buttonGroup.add(religionRadioButton);
-		buttonGroup.add(musicRadioButton);
-		buttonGroup.add(drinkRadioButton);
 		buttonGroup.add(outdoorRadioButton);
 		buttonGroup.add(kidsRadioButton);
 		buttonGroup.add(gameRadioButton);
-		buttonGroup.add(houseRadioButton);
 		
 		/* Create a button to clean all information given and add it into the panel */
 		cleanButton = new JButton("CLEAN");
@@ -235,10 +233,7 @@ public class Form extends JFrame {
 				religionRadioButton.setSelected(false);
 				kidsRadioButton.setSelected(false);
 				outdoorRadioButton.setSelected(false);
-				houseRadioButton.setSelected(false);
 				gameRadioButton.setSelected(false);
-				drinkRadioButton.setSelected(false);
-				musicRadioButton.setSelected(false);
 				
 			}
 		});
