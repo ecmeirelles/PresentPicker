@@ -8,13 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class Welcome extends JFrame {	
 	/* Welcome attributes */
 	private JPanel pane;
 	private JLabel welcomeLabel;
-	private JLabel appNameLabel;
 	private JLabel appImageLabel;
 	private JButton startButton;
 	
@@ -43,34 +43,30 @@ public class Welcome extends JFrame {
 		pane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pane);
 		/* Set layout as null means set it as AbsolutLayout */
-		pane.setLayout(null);
+		pane.setLayout(new BorderLayout(0, 0));
 		
 		/* Create a label (Welcome to) and add it into the panel */
-		welcomeLabel = new JLabel("WELCOME TO");
+		welcomeLabel = new JLabel("Welcome to Present Picker");
+		/*Put the label centralized horizontally in the page */
+		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		/* Set font attributes to label */
-		welcomeLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 20));
-		/* Usage of AbsolutLayout means that you need to specify where the component is */
-		welcomeLabel.setBounds(690, 280, 150, 30);
-		pane.add(welcomeLabel);
-		
-		/* Create a label (Present Picker) and add it into the panel */
-		appNameLabel = new JLabel("PRESENT PICKER");
-		appNameLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 40));
-		appNameLabel.setForeground(new Color(0, 102, 255));
-		appNameLabel.setBounds(600, 320, 320, 30);
-		pane.add(appNameLabel);
+		welcomeLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 40));
+		welcomeLabel.setForeground(new Color(51, 153, 204));
+		/* Add the label in the top of the page */
+		pane.add(welcomeLabel, BorderLayout.NORTH);
 		
 		/* Create an image using a label and add it into the panel */
 		appImageLabel = new JLabel("");
-		appImageLabel.setBounds(50, 170, 512, 512);
+		/*Put the label centralized horizontally in the page */
+		appImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		/* Demonstrate where the image is in the project */
 		appImageLabel.setIcon(new ImageIcon("src\\images\\present-icon.png"));
-		pane.add(appImageLabel);
+		/* Add the image in the center of the page */
+		pane.add(appImageLabel, BorderLayout.CENTER);
 		
 		/* Create a button (Start) and add it into the panel */
 		startButton = new JButton("START");
-		startButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
-		startButton.setBounds(690, 500, 120, 40);
+		startButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 20));
 		
 		/* Add an action to the button using anonymous inner class */
 		startButton.addActionListener(new ActionListener() {
@@ -79,6 +75,8 @@ public class Welcome extends JFrame {
 				new Form().setVisible(true);
 			}
 		});
-		pane.add(startButton);
+		
+		/* Add the button in the bottom of the page */
+		pane.add(startButton, BorderLayout.SOUTH);
 	}
 }
