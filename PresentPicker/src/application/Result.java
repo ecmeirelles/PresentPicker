@@ -29,6 +29,7 @@ public class Result extends JFrame {
 	private JLabel productNameLabel[];
 	private JLabel productPriceLabel[];
 	private JLabel giftedNameLabel;
+	private JLabel backLabel;
 	
 	private int xPosition = 50;
 	
@@ -70,23 +71,40 @@ public class Result extends JFrame {
 		appNameLabel.setBounds(100, 40, 250, 30);
 		pane.add(appNameLabel);
 		
+		/* Create a label which will allow the user to go back to the previous page */
+		backLabel = new JLabel("Previous Page");
+		/* When the user clicks in the label the current page becomes invisible and the previous one (Welcome)
+		 * becomes visible */
+		backLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Result.this.setVisible(false);
+				new Form().setVisible(true);
+			}
+		});
+		
+		backLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		backLabel.setIcon(new ImageIcon("src\\images\\back.png"));
+		backLabel.setBounds(30, 100, 200, 30);
+		pane.add(backLabel);
+		
 		/* Create a label (Results for) and add it into the panel */
 		resultsForLabel = new JLabel("Results for");
 		resultsForLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		resultsForLabel.setBounds(50, 130, 120, 30);
+		resultsForLabel.setBounds(50, 170, 120, 30);
 		pane.add(resultsForLabel);
 		
 		/* Create an empty label which will receive the name of the radio button selected in the form page and 
 		 * add it into the panel */
 		resultsInterestLabel = new JLabel("");
 		resultsInterestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		resultsInterestLabel.setBounds(140, 130, 100, 30);
+		resultsInterestLabel.setBounds(140, 170, 100, 30);
 		pane.add(resultsInterestLabel);
 		
 		/* Create an empty label which will receive the name of the gifted informed in the form page and add it into the panel */
 		giftedNameLabel = new JLabel("");
 		giftedNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		giftedNameLabel.setBounds(215, 130, 450, 30);
+		giftedNameLabel.setBounds(215, 170, 450, 30);
 		pane.add(giftedNameLabel);
 
 		/* Create 3 empty labels which will receive information of the product corresponding to the selected radio 
@@ -95,6 +113,7 @@ public class Result extends JFrame {
 		productNameLabel = new JLabel[3];
 		productPriceLabel = new JLabel[3];
 		
+		/* Create a loop starting with 0 and ending with 3 to add all the components into the panel */
 		for (int i = 0; i < 3; i++) {
 			productIconLabel[i] = new JLabel("");
 			
@@ -106,7 +125,7 @@ public class Result extends JFrame {
 				}
 			});
 			
-			productIconLabel[i].setBounds(xPosition, 180, 220, 250);
+			productIconLabel[i].setBounds(xPosition, 220, 220, 250);
 			productIconLabel[i].setIcon(new ImageIcon(""));
 			/* Set the label centralized horizontally in the page */
 			productIconLabel[i].setHorizontalAlignment(SwingConstants.CENTER);
@@ -114,13 +133,13 @@ public class Result extends JFrame {
 			
 			productNameLabel[i] = new JLabel("");
 			productNameLabel[i].setFont(new Font(FONT_BODY, Font.BOLD, 16));
-			productNameLabel[i].setBounds(xPosition, 430, 220, 30);
+			productNameLabel[i].setBounds(xPosition, 470, 220, 30);
 			productNameLabel[i].setHorizontalAlignment(SwingConstants.CENTER);
 			pane.add(productNameLabel[i]);
 			
 			productPriceLabel[i] = new JLabel("");
 			productPriceLabel[i].setFont(new Font(FONT_BODY, Font.BOLD, 16));
-			productPriceLabel[i].setBounds(xPosition, 460, 220, 30);
+			productPriceLabel[i].setBounds(xPosition, 500, 220, 30);
 			productPriceLabel[i].setHorizontalAlignment(SwingConstants.CENTER);
 			pane.add(productPriceLabel[i]);
 			
