@@ -28,6 +28,7 @@ public class Result extends JFrame {
 	private JLabel productIconLabel[];
 	private JLabel productNameLabel[];
 	private JLabel productPriceLabel[];
+	private JLabel giftedNameLabel;
 	
 	private int xPosition = 50;
 	
@@ -79,10 +80,16 @@ public class Result extends JFrame {
 		 * add it into the panel */
 		resultsInterestLabel = new JLabel("");
 		resultsInterestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		resultsInterestLabel.setBounds(140, 130, 450, 30);
+		resultsInterestLabel.setBounds(140, 130, 100, 30);
 		pane.add(resultsInterestLabel);
+		
+		/* Create an empty label which will receive the name of the gifted informed in the form page and add it into the panel */
+		giftedNameLabel = new JLabel("");
+		giftedNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
+		giftedNameLabel.setBounds(215, 130, 450, 30);
+		pane.add(giftedNameLabel);
 
-		/* Create 3 empty icon labels which will receive the image of the product corresponding to the selected radio 
+		/* Create 3 empty labels which will receive information of the product corresponding to the selected radio 
 		 * button in the form page and add them into the panel */
 		productIconLabel = new JLabel[3];
 		productNameLabel = new JLabel[3];
@@ -119,6 +126,10 @@ public class Result extends JFrame {
 			
 			xPosition = xPosition + 300;
 		}
+	}
+	/* Function to receive the name of the gifted */
+	public void giftedNameReceived (String firstName, String lastName) {
+		giftedNameLabel.setText("to " + firstName + " " + lastName);
 	}
 	
 	/* Function to receive the name of the radio button which was selected */

@@ -247,14 +247,14 @@ public class Form extends JFrame {
 		
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				/* First of all it is necessary get all information given */
-				gifted.setFirstNameGifted(firstNameTextField.getText());
-				gifted.setLastNameGifted(lastNameTextField.getText());
-				gifted.setAgeGifted(Integer.parseInt(ageTextField.getText()));
-				gifted.setGenderGifted(genderComboBox.getSelectedItem().toString());
-				
 				/* Create an instance of the result page */
 				Result result = new Result();
+				
+				/* First of all it is necessary get all information given */
+				result.giftedNameReceived(firstNameTextField.getText(), lastNameTextField.getText());
+				gifted.setAgeGifted(Integer.parseInt(ageTextField.getText()));
+				gifted.setGenderGifted(genderComboBox.getSelectedItem().toString());
+			
 				/* Use the gender selected (by index) to show the right options */
 				switch(genderComboBox.getSelectedIndex()) {
 					/* Nothing */
