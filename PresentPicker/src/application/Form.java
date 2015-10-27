@@ -266,6 +266,7 @@ public class Form extends JFrame {
 						/* Create instances of Book with some information of a real book, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						if (bookRadioButton.isSelected()) {
+							result.radioButtonReceived(bookRadioButton.getText());
 							Book book1 = new Book("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
 									+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
 									+ " and talent for investigation will never respect boundaries of state or status. He is a campaigning"
@@ -279,8 +280,7 @@ public class Form extends JFrame {
 									+ "for its survival. A tangled web of truth that someone is prepared to kill to protect.", "Eason", 
 									"src\\images\\girlSpiderWeb.jpg", 16.99);
 
-							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
-									book1.getPriceProduct());
+							result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct());
 
 							Book book2 = new Book("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
 									+ "of Ireland's most beloved rugby player: Peter Stringer When Peter Stringer played youth rugby, he "
@@ -294,8 +294,7 @@ public class Form extends JFrame {
 									+ "Stringer tells his own story - a story of overcoming the odds, and a story every Irish rugby fan will "
 									+ "want to read.", "Eason", "src\\images\\pullingStrings.jpg", 22.99);
 
-							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
-									book2.getPriceProduct());
+							result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct());
 
 							Book book3 = new Book("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
 									+ "assumed missing Dublin woman Elaine O'Hara had ended her own life. But after her remains were found "
@@ -311,20 +310,19 @@ public class Form extends JFrame {
 									+ "doggedness and tenacious police work, which saw that justice was done, and seen to be done' Irish "
 									+ "Independent.", "Eason", "src\\images\\perfectMurder.jpg", 19.99);
 
-							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
-									book3.getPriceProduct());
+							result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct());
 						}
 						
 						/* Create instances of Sport with some information of a real sport equipment, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (sportRadioButton.isSelected()) {
+							result.radioButtonReceived(sportRadioButton.getText());
 							Sport sport1 = new Sport("Rugby", "S/M/L/XL/XXL/XXXL", "Canterbury Ireland RFU", "The Canterbury Ireland RFU "
 									+ "Home Pro Shirt combines Canterburys classic loop neckline with a lightweight wicking fabric for all "
 									+ "round comfort, complete with 3D injection moulded Shamrock adorning the chest rounding off the look "
 									+ "perfectly. ", "Sports Direct", "src\\images\\rugbyTShirt.jpg", 62.39);
 
-							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
-									sport1.getPriceProduct());
+							result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct());
 
 							Sport sport2 = new Sport("Martial Art", "One size", "Lonsdale M Core Headguard", "The Lonsdale M Core Headguard "
 									+ "is perfect for sparring sessions, has an L Core front designed for maximum cushioning by using multiple"
@@ -332,8 +330,7 @@ public class Form extends JFrame {
 									+ " The Lonsdale Headguard is a one size fits all with an adjustable hook and loop tape fastening.", 
 									"Sports Direct", "src\\images\\headguard.jpg", 11.99);
 
-							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
-									sport2.getPriceProduct());
+							result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct());
 
 							Sport sport3 = new Sport("Football", "6 to 13", "Adidas Goletto FG", "Get a comfortable fit with the adidas "
 									+ "Goletto FG Mens Football Boots thanks to the padded and shaped ankle collar with cushioned foam "
@@ -341,22 +338,21 @@ public class Form extends JFrame {
 									+ "stitched forefoot for increased ball control and the moulded studs for increased traction and support "
 									+ "on firm ground.", "Sports Direct", "src\\images\\footballBoots.jpg", 31.20);
 							
-							result.radioButtonResult3(sport3.getImageProduct(), sport3.getNameProduct(), 
-									sport3.getPriceProduct());
+							result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct());
 						}
 						
 						/* Create instances of Religion with some information of a real religious equipment, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (religionRadioButton.isSelected()) {
+							result.radioButtonReceived(religionRadioButton.getText());
 							Religion religion1 = new Religion("30 cm", "St Joseph Statue", "", "Veritas", "src\\images\\stJoseph.jpg", 34.95);
 
-							result.radioButtonResult1(bookRadioButton.getText(), religion1.getImageProduct(), religion1.getNameProduct(), 
-									religion1.getPriceProduct());
+							result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct());
 
 							Religion religion2 = new Religion("35 cm", "Olive Wood Crucifix", "", "Veritas", "src\\images\\oliveCrucifix.png", 
 									25.00);
 
-							result.radioButtonResult2(religion2.getImageProduct(), religion2.getNameProduct(), 
+							result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), 
 									religion2.getPriceProduct());
 
 							Religion religion3 = new Religion("", "CD Table of the World", "In this new recording from Tony Alonso, you will find "
@@ -366,8 +362,7 @@ public class Form extends JFrame {
 									+ "languages and music from other cultures throughout this recording. Many of the songs are bilingual, "
 									+ "incorporating both Spanish and English.", "Veritas", "src\\images\\tableWorld.jpg", 14.95);
 							
-							result.radioButtonResult3(religion3.getImageProduct(), religion3.getNameProduct(), 
-									religion3.getPriceProduct());
+							result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
 						}
 						break;
 						
@@ -376,6 +371,7 @@ public class Form extends JFrame {
 						/* Create instances of Book with some information of a real book, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						if (bookRadioButton.isSelected()) {
+							result.radioButtonReceived(bookRadioButton.getText());
 							Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
 									+ " same commuter train every morning. She knows it will wait at the same signal each time,"
 									+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
@@ -386,10 +382,9 @@ public class Form extends JFrame {
 									+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
 									"src\\images\\girlOnTrain.jpg", 17.99);
 
-							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
-									book1.getPriceProduct());
+							result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct());
 							
-							Book book2 = new Book("Stephenie Meyer", 442, "Twilight Reimagined", "Celebrate the tenth "
+							Book book2 = new Book("Stephenie Meyer", 441, "Twilight Reimagined", "Celebrate the tenth "
 									+ "anniversary of Twilight ! This special tenth anniversary edition includes the original novel "
 									+ "as well as exclusive new bonus content. Readers will relish experiencing the iconic love story "
 									+ "of Bella and Edward again . . . or for the very first time. Deeply romantic and extraordinarily "
@@ -401,8 +396,7 @@ public class Form extends JFrame {
 									+ "Illustrated Guide , has sold nearly 155 million copies worldwide.", "Eason", 
 									"src\\images\\twilight.jpg", 19.99);
 
-							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
-									book2.getPriceProduct());
+							result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct());
 							
 							Book book3 = new Book("Jacky Colliss Harvey", 240, "Red", "In her history of red hair and "
 									+ "red-headedness, Jacky Colliss Harvey begins by tracing the redhead gene in prehistory, as it made "
@@ -414,20 +408,19 @@ public class Form extends JFrame {
 									+ "considers red hair in contemporary culture, from advertising to 'gingerism' and bullying.", "Eason",
 									"src\\images\\red.jpg", 25.50);
 
-							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
-									book3.getPriceProduct());
+							result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct());
 						}
 						
 						/* Create instances of Sport with some information of a real sport equipment, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (sportRadioButton.isSelected()) {
+							result.radioButtonReceived(sportRadioButton.getText());
 							Sport sport1 = new Sport("Swimming", "XL", "Slazenger Tankini Set", "The Slazenger Tankini Set offers a comfortable"
 									+ " fit for your swim, whilst still offering a sporty and stylish look. This ladies tankini set is a two"
 									+ " piece set with a short style bottoms and full length tankini top both with contrasting piping and the"
 									+ " Slazenger logo. ", "Sports Direct", "src\\images\\tankini.jpg", 6.59);
 
-							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
-									sport1.getPriceProduct());
+							result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct());
 							
 							Sport sport2 = new Sport("Cricket", "H/SH", "Slazenger V100 Advance", "This Slazenger V100 Advance Cricket Bat is"
 									+ " perfect for beginners who want to perfect a wide range of shots due to the OctoPlus grip, tapered toe"
@@ -436,38 +429,34 @@ public class Form extends JFrame {
 									+ " whilst the Slazenger branding completes the look.", "Sports Direct", "src\\images\\cricketBat.jpg", 
 									18.59);
 
-							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
-									sport2.getPriceProduct());
+							result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct());
 							
 							Sport sport3 = new Sport("Running", "XXS/XS/S/M", "Karrimor Xlite Sports", "This Sports Bra has an elasticated "
 									+ "chest band for a secure fit, as well as mesh panels for breathability. This Running Top also features"
 									+ " a V Neck design and a racer back for freedom of movement and a great look.", "Sports Direct", 
 									"src\\images\\xliteRun.jpg", 8.39);
 							
-							result.radioButtonResult3(sport3.getImageProduct(), sport3.getNameProduct(), 
-									sport3.getPriceProduct());
+							result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct());
 						}
 						
 						/* Create instances of Religion with some information of a real religious equipment, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (religionRadioButton.isSelected()) {
+							result.radioButtonReceived(religionRadioButton.getText());
 							Religion religion1 = new Religion("", "My Guardian Angel", "Enchanting pearl oval pendant with silver chain "
 									+ "comes gift-boxed.", "Veritas", "src\\images\\guardianAngel.png", 24.95);
 							
-							result.radioButtonResult1(bookRadioButton.getText(), religion1.getImageProduct(), religion1.getNameProduct(), 
-									religion1.getPriceProduct());
+							result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct());
 							
 							Religion religion2 = new Religion("", "Glass Rosary Beads", "Color: Green", "Veritas", 
 									"src\\images\\rosary.jpg", 6.95);
 							
-							result.radioButtonResult2(religion2.getImageProduct(), religion2.getNameProduct(), 
-									religion2.getPriceProduct());
+							result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), religion2.getPriceProduct());
 							
 							Religion religion3 = new Religion("", "St John Paul II Prayer Card", "", "Veritas", "src\\images\\prayerCard.jpg",
 									6.50);
 							
-							result.radioButtonResult3(religion3.getImageProduct(), religion3.getNameProduct(), 
-									religion3.getPriceProduct());
+							result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
 						}
 						break;
 				}
