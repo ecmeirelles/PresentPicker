@@ -27,14 +27,12 @@ public class Form extends JFrame {
 	private JLabel genderLabel;
 	private JLabel ageLabel;
 	private JLabel interestLabel;
-	private JLabel relationshipLabel;
 	private JLabel appIconLabel;
 	private JLabel appNameLabel;
 	private JLabel formDescriptionLabel;
 	private JTextField firstNameTextField;
 	private JTextField lastNameTextField;
 	private JTextField ageTextField;
-	private JTextField relationshipTextField;
 	private JComboBox<String> genderComboBox;
 	private JRadioButton musicRadioButton;
 	private JRadioButton bookRadioButton;
@@ -49,7 +47,10 @@ public class Form extends JFrame {
 	private JButton cleanButton;
 	private ButtonGroup buttonGroup;
 	
+	/* String used to display the options in the JComboBox */
 	private String genders[] = {"", "Male", "Female"};
+	
+	/* Constants to standardize all fonts */
 	public final String FONT_TITTLE = "Andalus";
 	public final String FONT_BODY = "Sylfaen";
 	public final String FONT_BUTTON = "Sylfaen";
@@ -66,6 +67,7 @@ public class Form extends JFrame {
 	
 	public Form() {
 		
+		/* Create the window - size = 1000x860 and start = (400, 100) */
 		setBounds(400, 100, 1000, 860);
 		setTitle("Present Picker");
 		/* Disable resize */
@@ -75,98 +77,109 @@ public class Form extends JFrame {
 		pane = new JPanel();
 		pane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pane);
+		/* Set layout as null means set it as AbsolutLayout */
 		pane.setLayout(null);
 		
+		/* Create an image using a label and add it into the panel */
 		appIconLabel = new JLabel("");
+		/* When use AbsolutLayout it is needed to inform the exactly position of the component */
 		appIconLabel.setBounds(20, 20, 64, 64);
+		/* Demonstrate where the image is in the project */
 		appIconLabel.setIcon(new ImageIcon("src\\images\\gift-icon.png"));
 		pane.add(appIconLabel);
 		
-		appNameLabel = new JLabel("PRESENT PICKER");
+		/* Create a label (Present Picker) and add it into the panel */
+		appNameLabel = new JLabel("Present Picker");
+		/* Set font attributes to label */
 		appNameLabel.setFont(new Font(FONT_TITTLE, Font.BOLD, 24));
 		appNameLabel.setBounds(100, 40, 250, 30);
 		pane.add(appNameLabel);
 		
+		/* Create an informational label and add it into the panel */
 		formDescriptionLabel = new JLabel("We need some information regarding the gifted...");
 		formDescriptionLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		formDescriptionLabel.setBounds(50, 130, 380, 30);
 		pane.add(formDescriptionLabel);
 		
+		/* Create a label (First Name: ) and add it into the panel */
 		firstNameLabel = new JLabel("First Name: ");
 		firstNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		firstNameLabel.setBounds(50, 180, 100, 30);
 		pane.add(firstNameLabel);
 		
+		/* Create a text field asking for first name and add it into the panel */
 		firstNameTextField = new JTextField();
 		firstNameTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		firstNameTextField.setBounds(170, 180, 300, 30);
 		pane.add(firstNameTextField);
 		
+		/* Create a label (Last Name: ) and add it into the panel */
 		lastNameLabel = new JLabel("Last Name: ");
 		lastNameLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		lastNameLabel.setBounds(520, 180, 100, 30);
 		pane.add(lastNameLabel);
 		
+		/* Create a text field asking for last name and add it into the panel */
 		lastNameTextField = new JTextField();
 		lastNameTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		lastNameTextField.setBounds(620, 180, 300, 30);
 		pane.add(lastNameTextField);
 		
+		/* Create a label (Gender: ) and add it into the panel */
 		genderLabel = new JLabel("Gender: ");
 		genderLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		genderLabel.setBounds(50, 250, 100, 30);
 		pane.add(genderLabel);
 		
+		/* Create a combo box asking for gender and add it into the panel */
 		genderComboBox = new JComboBox<String>(genders);
 		genderComboBox.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		genderComboBox.setBounds(170, 250, 300, 30);
 		pane.add(genderComboBox);
 		
+		/* Create a label (Age: ) and add it into the panel */
 		ageLabel = new JLabel("Age: ");
 		ageLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		ageLabel.setBounds(520, 250, 100, 30);
 		pane.add(ageLabel);
 		
+		/* Create a text field asking for age and add it into the panel */
 		ageTextField = new JTextField();
 		ageTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		ageTextField.setBounds(620, 250, 100, 30);
 		pane.add(ageTextField);
 		
-		relationshipLabel = new JLabel("Relationship with you: ");
-		relationshipLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		relationshipLabel.setBounds(50, 330, 200, 30);
-		pane.add(relationshipLabel);
-		
-		relationshipTextField = new JTextField();
-		relationshipTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
-		relationshipTextField.setBounds(240, 330, 230, 30);
-		pane.add(relationshipTextField);
-		
+		/* Create a label (Main Interest: ) and add it into the panel */
 		interestLabel = new JLabel("Main Interest: ");
 		interestLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		interestLabel.setBounds(50, 410, 150, 30);
+		interestLabel.setBounds(50, 330, 150, 30);
 		pane.add(interestLabel);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		bookRadioButton = new JRadioButton("Books");
 		bookRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		bookRadioButton.setBounds(50, 480, 150, 30);
 		pane.add(bookRadioButton);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		sportRadioButton = new JRadioButton("Sports");
 		sportRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		sportRadioButton.setBounds(50, 530, 150, 30);
 		pane.add(sportRadioButton);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		religionRadioButton = new JRadioButton("Religion");
 		religionRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		religionRadioButton.setBounds(50, 580, 150, 30);
 		pane.add(religionRadioButton);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		kidsRadioButton = new JRadioButton("Kids");
 		kidsRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		kidsRadioButton.setBounds(350, 480, 150, 30);
 		pane.add(kidsRadioButton);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		outdoorRadioButton = new JRadioButton("Outdoor");
 		outdoorRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		outdoorRadioButton.setBounds(350, 530, 150, 30);
@@ -177,6 +190,7 @@ public class Form extends JFrame {
 		houseRadioButton.setBounds(350, 580, 150, 30);
 		pane.add(houseRadioButton);
 		
+		/* Create a radio button (Books) and add it into the panel */
 		gameRadioButton = new JRadioButton("Games");
 		gameRadioButton.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		gameRadioButton.setBounds(650, 480, 150, 30);
@@ -204,17 +218,18 @@ public class Form extends JFrame {
 		buttonGroup.add(gameRadioButton);
 		buttonGroup.add(houseRadioButton);
 		
+		/* Create a button to clean all information given and add it into the panel */
 		cleanButton = new JButton("CLEAN");
 		cleanButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
 		cleanButton.setBounds(320, 700, 150, 30);
 		
+		/* To clean information it is necessary just set everything as empty or false */
 		cleanButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				firstNameTextField.setText("");
 				lastNameTextField.setText("");
 				genderComboBox.setSelectedItem("");
 				ageTextField.setText("");
-				relationshipTextField.setText("");
 				bookRadioButton.setSelected(false);
 				sportRadioButton.setSelected(false);
 				religionRadioButton.setSelected(false);
@@ -230,26 +245,22 @@ public class Form extends JFrame {
 		
 		pane.add(cleanButton);
 		
+		/* Create a button to do the action and add it into the panel */
 		searchButton = new JButton("SEARCH");
 		searchButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
 		searchButton.setBounds(520, 700, 150, 30);
 		
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				/* First of all it is necessary get all information given */
 				gifted.setFirstNameGifted(firstNameTextField.getText());
 				gifted.setLastNameGifted(lastNameTextField.getText());
-				gifted.setRelationshipGifted(relationshipTextField.getText());
 				gifted.setAgeGifted(Integer.parseInt(ageTextField.getText()));
 				gifted.setGenderGifted(genderComboBox.getSelectedItem().toString());
 				
-				System.out.println("Name: " + gifted.getFirstNameGifted() + " " + 
-						gifted.getLastNameGifted());
-				System.out.println("Gender: " + gifted.getGenderGifted());
-				System.out.println("Age: " + gifted.getAgeGifted());
-				System.out.println("Relationship: " + gifted.getRelationshipGifted());
-					
+				/* Create an instance of the result page */
 				Result result = new Result();
-				
+				/* Use the gender selected (by index) to show the right options */
 				switch(genderComboBox.getSelectedIndex()) {
 					/* Nothing */
 					case 0:
@@ -257,6 +268,8 @@ public class Form extends JFrame {
 						
 					/* Male */
 					case 1:
+						/* Create instances of Book with some information of a real book, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						if (bookRadioButton.isSelected()) {
 							Book book1 = new Book("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
 									+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
@@ -270,10 +283,10 @@ public class Form extends JFrame {
 									+ "deeper at the heart of this - maybe even the scoop that Millennium magazine so desperately needs "
 									+ "for its survival. A tangled web of truth that someone is prepared to kill to protect.", "Eason", 
 									"src\\images\\girlSpiderWeb.jpg", 16.99);
-							
+
 							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
-							
+
 							Book book2 = new Book("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
 									+ "of Ireland's most beloved rugby player: Peter Stringer When Peter Stringer played youth rugby, he "
 									+ "was so small that people told his parents he shouldn't be allowed on the pitch. Fortunately for "
@@ -285,10 +298,10 @@ public class Form extends JFrame {
 									+ "helped overturn a late deficit en route to the Six Nations Grand Slam. Now, for the first time, Peter "
 									+ "Stringer tells his own story - a story of overcoming the odds, and a story every Irish rugby fan will "
 									+ "want to read.", "Eason", "src\\images\\pullingStrings.jpg", 22.99);
-							
+
 							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
 									book2.getPriceProduct());
-							
+
 							Book book3 = new Book("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
 									+ "assumed missing Dublin woman Elaine O'Hara had ended her own life. But after her remains were found "
 									+ "garda discovered that Elaine was in thrall to a man who had spent years grooming her to let him kill "
@@ -302,29 +315,31 @@ public class Form extends JFrame {
 									+ "that gripped the nation by Ireland's leading crime journalist, Paul Williams. 'An example of "
 									+ "doggedness and tenacious police work, which saw that justice was done, and seen to be done' Irish "
 									+ "Independent.", "Eason", "src\\images\\perfectMurder.jpg", 19.99);
-							
+
 							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
 									book3.getPriceProduct());
 						}
 						
+						/* Create instances of Sport with some information of a real sport equipment, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						else if (sportRadioButton.isSelected()) {
 							Sport sport1 = new Sport("Rugby", "S/M/L/XL/XXL/XXXL", "Canterbury Ireland RFU", "The Canterbury Ireland RFU "
 									+ "Home Pro Shirt combines Canterburys classic loop neckline with a lightweight wicking fabric for all "
 									+ "round comfort, complete with 3D injection moulded Shamrock adorning the chest rounding off the look "
 									+ "perfectly. ", "Sports Direct", "src\\images\\rugbyTShirt.jpg", 62.39);
-							
+
 							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
 									sport1.getPriceProduct());
-							
+
 							Sport sport2 = new Sport("Martial Art", "One size", "Lonsdale M Core Headguard", "The Lonsdale M Core Headguard "
 									+ "is perfect for sparring sessions, has an L Core front designed for maximum cushioning by using multiple"
 									+ " layers of closed cell foam and M Core sides for maximum breathability and keep you cooler for longer."
 									+ " The Lonsdale Headguard is a one size fits all with an adjustable hook and loop tape fastening.", 
 									"Sports Direct", "src\\images\\headguard.jpg", 11.99);
-							
+
 							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
 									sport2.getPriceProduct());
-							
+
 							Sport sport3 = new Sport("Football", "6 to 13", "Adidas Goletto FG", "Get a comfortable fit with the adidas "
 									+ "Goletto FG Mens Football Boots thanks to the padded and shaped ankle collar with cushioned foam "
 									+ "insole, whilst the full laced front helps to secure the foot in place. These Football Boots have a "
@@ -335,18 +350,20 @@ public class Form extends JFrame {
 									sport3.getPriceProduct());
 						}
 						
+						/* Create instances of Religion with some information of a real religious equipment, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						else if (religionRadioButton.isSelected()) {
 							Religion religion1 = new Religion("30 cm", "St Joseph Statue", "", "Veritas", "src\\images\\stJoseph.jpg", 34.95);
-							
+
 							result.radioButtonResult1(bookRadioButton.getText(), religion1.getImageProduct(), religion1.getNameProduct(), 
 									religion1.getPriceProduct());
-							
+
 							Religion religion2 = new Religion("35 cm", "Olive Wood Crucifix", "", "Veritas", "src\\images\\oliveCrucifix.png", 
 									25.00);
-							
+
 							result.radioButtonResult2(religion2.getImageProduct(), religion2.getNameProduct(), 
 									religion2.getPriceProduct());
-							
+
 							Religion religion3 = new Religion("", "CD Table of the World", "In this new recording from Tony Alonso, you will find "
 									+ "ritual songs of mission and ministry that challenge us to take the Gospel vision from the table of Christ "
 									+ "Jesus to the table of the world. Songs like 'How Good It Is' and 'I Will Arise' portray a message of "
@@ -361,6 +378,8 @@ public class Form extends JFrame {
 						
 					/* Female */
 					case 2:
+						/* Create instances of Book with some information of a real book, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						if (bookRadioButton.isSelected()) {
 							Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
 									+ " same commuter train every morning. She knows it will wait at the same signal each time,"
@@ -371,7 +390,7 @@ public class Form extends JFrame {
 									+ " changed. Now Rachel has a chance to become a part of the lives she's only watched from"
 									+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
 									"src\\images\\girlOnTrain.jpg", 17.99);
-							
+
 							result.radioButtonResult1(bookRadioButton.getText(), book1.getImageProduct(), book1.getNameProduct(), 
 									book1.getPriceProduct());
 							
@@ -386,7 +405,7 @@ public class Form extends JFrame {
 									+ "Short Second Life of Bree Tanner: An Eclipse Novella, and The Twilight Saga: The Official "
 									+ "Illustrated Guide , has sold nearly 155 million copies worldwide.", "Eason", 
 									"src\\images\\twilight.jpg", 19.99);
-							
+
 							result.radioButtonResult2(book2.getImageProduct(), book2.getNameProduct(), 
 									book2.getPriceProduct());
 							
@@ -399,17 +418,19 @@ public class Form extends JFrame {
 									+ "hair in art and literature, looks at modern medicine and the genetic decoding of red hair, and "
 									+ "considers red hair in contemporary culture, from advertising to 'gingerism' and bullying.", "Eason",
 									"src\\images\\red.jpg", 25.50);
-							
+
 							result.radioButtonResult3(book3.getImageProduct(), book3.getNameProduct(), 
 									book3.getPriceProduct());
 						}
 						
+						/* Create instances of Sport with some information of a real sport equipment, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						else if (sportRadioButton.isSelected()) {
 							Sport sport1 = new Sport("Swimming", "XL", "Slazenger Tankini Set", "The Slazenger Tankini Set offers a comfortable"
 									+ " fit for your swim, whilst still offering a sporty and stylish look. This ladies tankini set is a two"
 									+ " piece set with a short style bottoms and full length tankini top both with contrasting piping and the"
 									+ " Slazenger logo. ", "Sports Direct", "src\\images\\tankini.jpg", 6.59);
-							
+
 							result.radioButtonResult1(sportRadioButton.getText(), sport1.getImageProduct(), sport1.getNameProduct(), 
 									sport1.getPriceProduct());
 							
@@ -419,7 +440,7 @@ public class Form extends JFrame {
 									+ "This Slazenger cricket bat has an OctoPlus grip to give you the confidence to play the shots you want"
 									+ " whilst the Slazenger branding completes the look.", "Sports Direct", "src\\images\\cricketBat.jpg", 
 									18.59);
-							
+
 							result.radioButtonResult2(sport2.getImageProduct(), sport2.getNameProduct(), 
 									sport2.getPriceProduct());
 							
@@ -432,6 +453,8 @@ public class Form extends JFrame {
 									sport3.getPriceProduct());
 						}
 						
+						/* Create instances of Religion with some information of a real religious equipment, get this information and 
+						 * send part of it (image, name and price) to the result page*/
 						else if (religionRadioButton.isSelected()) {
 							Religion religion1 = new Religion("", "My Guardian Angel", "Enchanting pearl oval pendant with silver chain "
 									+ "comes gift-boxed.", "Veritas", "src\\images\\guardianAngel.png", 24.95);
@@ -454,40 +477,7 @@ public class Form extends JFrame {
 						break;
 				}
 				
-				/*
-				if (sportCheckBox.isSelected()) {
-					result.checkBoxResult(sportCheckBox.getText());
-				}
-				
-				if (religionCheckBox.isSelected()) {
-					result.checkBoxResult(religionCheckBox.getText());
-				}
-				
-				if (kidsCheckBox.isSelected()) {
-					result.checkBoxResult(kidsCheckBox.getText());
-				}
-				
-				if (outdoorCheckBox.isSelected()) {
-					result.checkBoxResult(outdoorCheckBox.getText());
-				}
-				
-				if (houseCheckBox.isSelected()) {
-					result.checkBoxResult(houseCheckBox.getText());
-				}
-				
-				if (gameCheckBox.isSelected()) {
-					result.checkBoxResult(gameCheckBox.getText());
-				}
-				
-				if (drinkCheckBox.isSelected()) {
-					result.checkBoxResult(drinkCheckBox.getText());
-				}
-				
-				if (musicCheckBox.isSelected()) {
-					result.checkBoxResult(musicCheckBox.getText());
-				}
-				*/
-				
+				/* Set form page as invisible and result page as visible */
 				Form.this.setVisible(false);
 				result.setVisible(true);
 			}

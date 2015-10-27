@@ -18,6 +18,7 @@ public class Welcome extends JFrame {
 	private JLabel appImageLabel;
 	private JButton startButton;
 	
+	/* Constants to standardize all fonts */
 	public final String FONT_TITTLE = "Andalus";
 	public final String FONT_BODY = "Sylfaen";
 	public final String FONT_BUTTON = "Sylfaen";
@@ -42,7 +43,7 @@ public class Welcome extends JFrame {
 		pane = new JPanel();
 		pane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pane);
-		/* Set layout as null means set it as AbsolutLayout */
+		/* Usage of a layout manager: BorderLayout */
 		pane.setLayout(new BorderLayout(0, 0));
 		
 		/* Create a label (Welcome to) and add it into the panel */
@@ -57,7 +58,7 @@ public class Welcome extends JFrame {
 		
 		/* Create an image using a label and add it into the panel */
 		appImageLabel = new JLabel("");
-		/*Put the label centralized horizontally in the page */
+		/* Set the label centralized horizontally in the page */
 		appImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		/* Demonstrate where the image is in the project */
 		appImageLabel.setIcon(new ImageIcon("src\\images\\present-icon.png"));
@@ -71,6 +72,7 @@ public class Welcome extends JFrame {
 		/* Add an action to the button using anonymous inner class */
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				/* Set welcome page as invisible and form page as visible */
 				Welcome.this.setVisible(false);
 				new Form().setVisible(true);
 			}
