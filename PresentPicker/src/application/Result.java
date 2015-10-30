@@ -2,6 +2,7 @@ package application;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -11,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import draws.Draw;
 
 public class Result extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -162,5 +165,15 @@ public class Result extends JFrame {
 		productIconLabel[productIndexNumber].setIcon(new ImageIcon(productImageAddress));
 		productNameLabel[productIndexNumber].setText(productName);
 		productPriceLabel[productIndexNumber].setText(Double.toString(productPrice) + " €");
+	}
+	
+	/* Function to add the draws into the panel */
+	Draw draw = new Draw();
+	public void paint(Graphics g) {
+		super.paint(g);
+		
+		if (resultsInterestLabel.getText() == "Books" ) {
+			draw.drawBook(g);
+		}
 	}
 }
