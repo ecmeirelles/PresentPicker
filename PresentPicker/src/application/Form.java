@@ -161,6 +161,14 @@ public class Form extends JFrame {
 		
 		/* Create a text field asking for age and add it into the panel */
 		ageTextField = new JTextField();
+		ageTextField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				if (Integer.parseInt(ageTextField.getText()) < 11) {
+					kidsRadioButton.setSelected(true);
+				}
+			}
+		});
 		ageTextField.setFont(new Font(FONT_BODY, Font.PLAIN, 16));
 		ageTextField.setBounds(620, 340, 100, 30);
 		pane.add(ageTextField);
@@ -228,13 +236,7 @@ public class Form extends JFrame {
 				lastNameTextField.setText("");
 				genderComboBox.setSelectedItem("");
 				ageTextField.setText("");
-				bookRadioButton.setSelected(false);
-				sportRadioButton.setSelected(false);
-				religionRadioButton.setSelected(false);
-				kidsRadioButton.setSelected(false);
-				outdoorRadioButton.setSelected(false);
-				gameRadioButton.setSelected(false);
-				
+				buttonGroup.clearSelection();
 			}
 		});
 		
