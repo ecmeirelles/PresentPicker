@@ -14,9 +14,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import category.Book;
-import category.Religion;
-import category.Sport;
+import category.*;
 import gifted.Gifted;
 
 public class Form extends JFrame {
@@ -366,6 +364,50 @@ public class Form extends JFrame {
 							
 							result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
 						}
+						
+						/* Create instances of Kid with some information of real toys, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (kidsRadioButton.isSelected()) {
+							result.radioButtonReceived(kidsRadioButton.getText());
+							Kid kid1 = new Kid(3, "Robotic Puppy", "Newborn Teksta Puppy is a sweet and adorable life-like robotic Puppy that"
+									+ " responds to your voice and touch. Engineered with state-of-the-art artificial intelligence, Tekstas "
+									+ "toyetic interaction offers many emotions and an expressive light-up eye patterns to share his "
+									+ "feelings. As your devoted companion, using cutting edge hand gesture technology, you can command "
+									+ "Newborn Teksta Puppy to sit, walk, beg and sing. ", "Debenhams", "src\\images\\roboticPuppy.jpg", 28.00);
+							
+							result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct());
+							
+							Kid kid2 = new Kid(4, "LEGO Comics Super Heroes", "DK's LEGO DC Comics Super Heroes Level 3 Reader features "
+									+ "LEGO Batman and many more of DC's best-loved LEGO Super Heroes as they fight to protect the world "
+									+ "from cunning villains. Discover how LEGO Batman fights crime in Gotham City and learn all about his "
+									+ "super talents, gadgets and vehicles. Meet the villains that LEGO Batman must battle, as well as the "
+									+ "allies who help Batman on his most dangerous missions. DK Readers have easy-to-read stories with word"
+									+ " repetition and pictures to build literacy skills, DK Readers are a multi-level reading programme "
+									+ "guaranteed to capture a child's interest while developing reading skills and general knowledge, "
+									+ "compatible with the framework for teaching literacy.", "Debenhams", "src\\images\\legoBatman.jpg", 7.00);
+							
+							result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct());
+							
+							Kid kid3 = new Kid(1, "Oball Rollie Elephant", "The Oball Rollie Elephant is soft, and flexible for little hands "
+									+ "even the tiniest hands can pick them up! Babies will love this easy-to-grasp toy so much that they won't"
+									+ " want to put it down. The toy features an internal rattle ball to encourage auditory and tactile "
+									+ "stimulation. Baby will get a grip on playtime with this character's bold colors and dynamic play "
+									+ "patterns.", "Debenhams", "src\\images\\elephantToy.jpg", 5.10);
+							
+							result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct());
+						}
+						
+						/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (outdoorRadioButton.isSelected()) {
+							
+						}
+						
+						/* Create instances of Game with some information of real games, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (gameRadioButton.isSelected()) {
+							
+						}
 						break;
 						
 					/* Female */
@@ -459,6 +501,24 @@ public class Form extends JFrame {
 									6.50);
 							
 							result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
+						}
+						
+						/* Create instances of Kid with some information of real toys, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (kidsRadioButton.isSelected()) {
+							
+						}
+						
+						/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (outdoorRadioButton.isSelected()) {
+							
+						}
+						
+						/* Create instances of Game with some information of real games, get this information and 
+						 * send part of it (image, name and price) to the result page*/
+						else if (gameRadioButton.isSelected()) {
+							
 						}
 						break;
 				}
