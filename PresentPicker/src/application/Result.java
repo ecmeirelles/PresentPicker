@@ -188,6 +188,9 @@ public class Result extends JFrame {
 			case "Outdoor":
 				drawing.drawOutdoor(g);
 				break;
+			case "Game":
+				drawing.drawGame(g);
+				break;
 		}
 	}
 }

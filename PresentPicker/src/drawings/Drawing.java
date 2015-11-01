@@ -117,12 +117,31 @@ public class Drawing {
 		Graphics2D g2 = (Graphics2D) g;
 		
 		/* Drawing the barbecue */
-		g2.setColor(Color.ORANGE);
+		g2.setColor(Color.RED);
 		g2.fillRect(820, 700, 100, 10);
-		g2.setXORMode(Color.BLUE);
+		g2.setColor(Color.DARK_GRAY);
 		g2.fillArc(820, 675, 100, 70, 180, 180);
 		g2.fillRect(845, 740, 10, 50);
 		g2.fillRect(885, 740, 10, 50);
 		g2.fillRect(840, 770, 60, 10);
+	}
+	
+	/* Function to draw an icon to outdoor's interest */
+	public void drawGame(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		
+		/* Drawing the TV */
+		g2.drawRect(820, 700, 120, 70);
+		g2.drawRect(830, 710, 100, 50);
+		/* Drawing the joystick */
+		g2.fillRect(810, 750, 50, 20);
+		/* Set XOR Mode to the bottoms of the joystick */
+		g2.setXORMode(Color.GRAY);
+		g2.fillOval(820, 755, 10, 10);
+		g2.fillOval(840, 755, 10, 10);
+		/* Set back to the paint mode */
+		g2.setPaintMode();
+		g2.fillArc(810, 763, 20, 15, 180, 180);
+		g2.fillArc(840, 763, 20, 15, 180, 180);
 	}
 }
