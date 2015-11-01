@@ -185,6 +185,9 @@ public class Result extends JFrame {
 			case "Kids":
 				drawing.drawKids(g);
 				break;
+			case "Outdoor":
+				drawing.drawOutdoor(g);
+				break;
 		}
 	}
 }

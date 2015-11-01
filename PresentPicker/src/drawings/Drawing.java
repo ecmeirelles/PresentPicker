@@ -76,7 +76,7 @@ public class Drawing {
 		g2.fillOval(820, 580, 100, 100);
 		/* Drawing the star */
 		g2.setColor(Color.ORANGE);
-		g.fillPolygon(xStar, yStar, 13);
+		g2.fillPolygon(xStar, yStar, 13);
 	}
 	
 	/* Function to draw an icon to kid's interest */
@@ -94,12 +94,12 @@ public class Drawing {
 		g2.drawLine(840, 760, 825, 775);
 		g2.drawLine(840, 760, 865, 775);
 		/* Drawing the dress */
-		g.setColor(Color.PINK);
-		g.fillPolygon(xDress, yDress, 3);
+		g2.setColor(Color.PINK);
+		g2.fillPolygon(xDress, yDress, 3);
 		
 		/* ----- Drawing the boy ----- */
 		/* Drawing the head */
-		g.setColor(Color.BLACK);
+		g2.setColor(Color.BLACK);
 		g2.drawOval(870, 705, 40, 40);
 		/* Drawing the body */
 		g2.drawLine(890, 745, 890, 800);
@@ -110,5 +110,19 @@ public class Drawing {
 		g2.drawLine(890, 760, 865, 775);
 		g2.drawLine(890, 760, 905, 775);
 		
+	}
+	
+	/* Function to draw an icon to outdoor's interest */
+	public void drawOutdoor(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		
+		/* Drawing the barbecue */
+		g2.setColor(Color.ORANGE);
+		g2.fillRect(820, 700, 100, 10);
+		g2.setXORMode(Color.BLUE);
+		g2.fillArc(820, 675, 100, 70, 180, 180);
+		g2.fillRect(845, 740, 10, 50);
+		g2.fillRect(885, 740, 10, 50);
+		g2.fillRect(840, 770, 60, 10);
 	}
 }
