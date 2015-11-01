@@ -430,7 +430,24 @@ public class Form extends JFrame {
 						/* Create instances of Game with some information of real games, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (gameRadioButton.isSelected()) {
+							result.radioButtonReceived(gameRadioButton.getText());
+							Game game1 = new Game("XBox One", "Halo 5: Guardians", "", "Game Stop", "src\\images\\halo5.jpg", 69.99);
 							
+							result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct());
+							
+							Game game2 = new Game("PlayStation 4", "WWE 2K16", "The newest addition to the flagship WWE franchise will deliver "
+									+ "authentic, high-powered and hard-hitting action, including fan-favourite features and new WWE Superstars, "
+									+ "Divas and Legends, gameplay innovations, presentation updates and more.", "Game Stop", 
+									"src\\images\\WWW2k16.jpg", 74.99);
+							
+							result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct());
+							
+							Game game3 = new Game("Wii U", "Project Zero", "Feel the fingers of fear on the nape of your neck in Project Zero: "
+									+ "Maiden of Black Water, only on Wii U. Explore dank, dark locations, exorcise malevolent apparitions with "
+									+ "a strange camera, and tread deep into a mystery that spans this world and the next.", "Game Stop", 
+									"src\\images\\projectZero.jpg", 69.99);
+							
+							result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct());
 						}
 						break;
 						
@@ -542,7 +559,28 @@ public class Form extends JFrame {
 						/* Create instances of Game with some information of real games, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (gameRadioButton.isSelected()) {
+							result.radioButtonReceived(gameRadioButton.getText());
+							Game game1 = new Game("Nitendo 3DS", "Garfield Kart", "The laziest cat in the world gets a serious speed boost! "
+									+ "Three difficulties and four game modes await you. Quick race, championship, time trial and daily challenge. "
+									+ "Up to four friends can play against each other via the local wifi network. It's time to burn rubber and eat "
+									+ "lasagne!", "Game Stop", "src\\images\\garfieldKart.jpg", 29.99);
 							
+							result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct());
+							
+							Game game2 = new Game("XBox 360", "Just Dance 2016", "Bust a move to “Uptown Funk” by Mark Ronson Ft. Bruno Mars and "
+									+ "feel the beat in “All About That Bass” by Meghan Trainor - Just Dance 2016 features an amazing tracklist "
+									+ "with visuals that are more creative and breath-taking than ever before.", "Game Stop", 
+									"src\\images\\justDance.jpg", 44.99);
+							
+							result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct());
+							
+							Game game3 = new Game("PC", "The Sims 4", "Treat your Sims to a day of pampering with The Sims™ 4 Spa Day. Visit the "
+									+ "all-new Perfect Balance Spa for a revitalizing massage, or work on the all-new Wellness skill with some "
+									+ "yoga. After a relaxing mud bath, step into the sauna to melt away the daily stresses. You’ll also get a "
+									+ "variety of all-new objects and décor, so you can pack your home with so much tranquility that your Sims "
+									+ "can’t help but find their inner peace!", "Game Stop", "src\\images\\theSims4.jpg", 44.99);
+							
+							result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct());
 						}
 						break;
 				}
