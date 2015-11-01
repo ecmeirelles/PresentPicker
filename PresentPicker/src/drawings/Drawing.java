@@ -13,6 +13,9 @@ public class Drawing {
 	
 	private int xStar[] = {850, 870, 890, 910, 930, 920, 930, 910, 890, 870, 850, 860, 850};
 	private int yStar[] = {600, 600, 580, 600, 600, 620, 640, 640, 660, 640, 640, 620, 600};
+	
+	private int xDress[] = {840, 860, 820};
+	private int yDress[] = {765, 800, 800};
 
 	/* Function to draw an icon to Book's interest */
 	public void drawBook(Graphics g) {
@@ -74,5 +77,38 @@ public class Drawing {
 		/* Drawing the star */
 		g2.setColor(Color.ORANGE);
 		g.fillPolygon(xStar, yStar, 13);
+	}
+	
+	/* Function to draw an icon to kid's interest */
+	public void drawKids(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		/* ----- Drawing the girl ----- */
+		/* Drawing the head */
+		g2.drawOval(820, 705, 40, 40);
+		/* Drawing the body */
+		g2.drawLine(840, 745, 840, 800);
+		/* Drawing the legs */
+		g2.drawLine(840, 800, 825, 815);
+		g2.drawLine(840, 800, 855, 815);
+		/* Drawing the arms */
+		g2.drawLine(840, 760, 825, 775);
+		g2.drawLine(840, 760, 865, 775);
+		/* Drawing the dress */
+		g.setColor(Color.PINK);
+		g.fillPolygon(xDress, yDress, 3);
+		
+		/* ----- Drawing the boy ----- */
+		/* Drawing the head */
+		g.setColor(Color.BLACK);
+		g2.drawOval(870, 705, 40, 40);
+		/* Drawing the body */
+		g2.drawLine(890, 745, 890, 800);
+		/* Drawing the legs */
+		g2.drawLine(890, 800, 875, 815);
+		g2.drawLine(890, 800, 905, 815);
+		/* Drawing the arms */
+		g2.drawLine(890, 760, 865, 775);
+		g2.drawLine(890, 760, 905, 775);
+		
 	}
 }

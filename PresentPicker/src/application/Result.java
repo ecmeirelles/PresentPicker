@@ -182,6 +182,9 @@ public class Result extends JFrame {
 			case "Religion":
 				drawing.drawReligion(g);
 				break;
+			case "Kids":
+				drawing.drawKids(g);
+				break;
 		}
 	}
 }
