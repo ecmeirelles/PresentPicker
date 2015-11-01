@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import draws.Draw;
+import drawings.Drawing;
 
 public class Result extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -167,13 +167,18 @@ public class Result extends JFrame {
 		productPriceLabel[productIndexNumber].setText(Double.toString(productPrice) + " €");
 	}
 	
-	/* Function to add the draws into the panel */
-	Draw draw = new Draw();
+	/* Function to add the drawings into the panel */
+	Drawing drawing = new Drawing();
 	public void paint(Graphics g) {
 		super.paint(g);
 		
-		if (resultsInterestLabel.getText() == "Books" ) {
-			draw.drawBook(g);
+		switch(resultsInterestLabel.getText()) {
+			case "Books":
+				drawing.drawBook(g);
+				break;
+			case "Sports":
+				drawing.drawSport(g);
+				break;
 		}
 	}
 }
