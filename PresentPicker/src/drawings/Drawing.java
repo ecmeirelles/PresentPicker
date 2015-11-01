@@ -1,5 +1,6 @@
 package drawings;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
@@ -9,6 +10,9 @@ public class Drawing {
 	private int xPagesLeft[] = {700, 700,800};
 	private int xPagesRight[] = {920, 920,820};
 	private int yPages[] = {685, 700, 700};
+	
+	private int xStar[] = {850, 870, 890, 910, 930, 920, 930, 910, 890, 870, 850, 860, 850};
+	private int yStar[] = {600, 600, 580, 600, 600, 620, 640, 640, 660, 640, 640, 620, 600};
 
 	/* Function to draw an icon to Book's interest */
 	public void drawBook(Graphics g) {
@@ -40,7 +44,7 @@ public class Drawing {
 		Graphics2D g2 = (Graphics2D) g;
 		
 		/* Drawing the head */
-		g2.drawOval(855, 705, 45, 40);
+		g2.fillOval(855, 705, 45, 40);
 		/* Drawing the body */
 		g2.drawLine(875, 745, 875, 800);
 		/* Drawing the legs */
@@ -53,5 +57,22 @@ public class Drawing {
 		g2.drawLine(860, 775, 860, 790);
 		g2.drawLine(875, 760, 900, 775);
 		g2.drawLine(900, 775, 915, 760);
+	}
+	
+	/* Function to draw an icon to Religion's interest */
+	public void drawReligion(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
+		
+		/* Drawing the cross */
+		g2.fillRect(830, 680, 30, 120);
+		g2.fillRect(800, 710, 90, 30);
+		/* Drawing the moon */
+		g2.setColor(Color.ORANGE);
+		g2.fillOval(800, 600, 100, 100);
+		g2.setColor(new Color(241,241,241));
+		g2.fillOval(820, 580, 100, 100);
+		/* Drawing the star */
+		g2.setColor(Color.ORANGE);
+		g.fillPolygon(xStar, yStar, 13);
 	}
 }

@@ -179,6 +179,9 @@ public class Result extends JFrame {
 			case "Sports":
 				drawing.drawSport(g);
 				break;
+			case "Religion":
+				drawing.drawReligion(g);
+				break;
 		}
 	}
 }
