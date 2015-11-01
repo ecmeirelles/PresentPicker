@@ -547,13 +547,55 @@ public class Form extends JFrame {
 						/* Create instances of Kid with some information of real toys, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (kidsRadioButton.isSelected()) {
+							result.radioButtonReceived(kidsRadioButton.getText());
+							Kid kid1 = new Kid(0, "Owl Rattle", "Baby will have oodles fo fun with this soft rattle.", "Debenhams", 
+									"src\\images\\owl.jpg", 5.10);
 							
+							result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct());
+							
+							Kid kid2 = new Kid(1, "Disney Frozen Else", "Elsa the powerful Snow Queen from Disney's Frozen is now available as a "
+									+ "cute and cuddly soft toy. Recreate scenes from the movie or cuddle up with your favourite Frozen princess"
+									+ " at night. This beautifully soft toy shows Elsa in her iconic blue gown, just like the movie.", 
+									"Debenhams", "src\\images\\elsaFrozen.jpg", 27.00);
+							
+							result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct());
+							
+							Kid kid3 = new Kid(3, "Minions Walkie Talkies", "Designed to look like your favourite Minions, Dave and Stuart, these"
+									+ " fun Walkie Talkies will keep you entertained for hours. Walkie Talkies include volume control and are easy"
+									+ " use for little hands, just press the button and talk. Why not pretend to be on a secret Minion mission and"
+									+ " let the adventure begin. Over and out!", "Debenhams", "src\\images\\minions.jpg", 20.00);
+							
+							result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct());
 						}
 						
 						/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (outdoorRadioButton.isSelected()) {
+							result.radioButtonReceived(outdoorRadioButton.getText());
+							Outdoor outdoor1 = new Outdoor("39 cm x 2 cm", "Wall Heart", "This funky and colourful wall art heart is the perfect "
+									+ "accessory to liven up any space in the home or garden. Finished in stunning bright colours and with an "
+									+ "industrial finish this eye catching piece is sure to draw attention. Made from steel, this piece is coated "
+									+ "in paint that is suitable for outdoor use and has a size of 39cm high, 22cm wide and 6cm deep. A unique and "
+									+ "stylish piece that can be hung quickly and easily on any wall or fence - fixings not supplied. Add a piece "
+									+ "of industrial romance to your living space. Home is where the heart is...", "House Of Fraser", 
+									"src\\images\\wallHeart.png", 19.75);
 							
+							result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct());
+							
+							Outdoor outdoor2 = new Outdoor("79 cm x 120 cm x 120 cm", "Rattan Round Table", "Eden Rattan Round Table With 8mm "
+									+ "tempered glass - Hand woven and easy to assemble (Flatpack), it can be left outdoors in all weather "
+									+ "conditions, thanks to UV resistant PVC rattan. A great way of adding an extra dimension to your garden, "
+									+ "this handsome furniture will serve you well for many years to come.", "House of Fraser", 
+									"src\\images\\roundTable.png", 309.00);
+							
+							result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct());
+							
+							Outdoor outdoor3 = new Outdoor("120 cm x 25 cm x 120 cm", "Small Play Pool", "Bestway: Tots will love splashing about "
+									+ "in the Small Play Pool. Measuring 102cm in diameter and standing at 25cm tall, this handy little pool is "
+									+ "perfect for back-garden fun. Please note: styles vary - this pool comes in red, green or blue. One colour "
+									+ "will be chosen at random for you.", "House of Fraser", "src\\images\\pool.png", 6.00);
+							
+							result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct());
 						}
 						
 						/* Create instances of Game with some information of real games, get this information and 
