@@ -67,7 +67,8 @@ public class Welcome extends JFrame {
 		
 		/* Create a button (Start) and add it into the panel */
 		startButton = new JButton("START");
-		startButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 20));
+		/* Usage of some method from Font Metrics */
+		startButton.getFont();
 		
 		/* Add an action to the button using anonymous inner class */
 		startButton.addActionListener(new ActionListener() {

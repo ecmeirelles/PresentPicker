@@ -228,8 +228,9 @@ public class Form extends JFrame {
 		cleanButton.setBounds(320, 700, 150, 30);
 		
 		/* To clean information it is necessary just set everything as empty or false */
-		cleanButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
+		cleanButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				firstNameTextField.setText("");
 				lastNameTextField.setText("");
 				genderComboBox.setSelectedItem("");
@@ -400,7 +401,30 @@ public class Form extends JFrame {
 						/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
 						 * send part of it (image, name and price) to the result page*/
 						else if (outdoorRadioButton.isSelected()) {
+							result.radioButtonReceived(outdoorRadioButton.getText());
+							Outdoor outdoor1 = new Outdoor("104 cm x 72 cm", "La Hacienda", "This Large Kettle Barbecue is the perfect way to "
+									+ "enjoy BBQ treats in the sunshine. Make the most of the summer and get the family out in the garden as you "
+									+ "serve up sizzling sausages, crispy chicken legs, grilled burgers, juicy steaks and much more just the way"
+									+ " you like it.", "House Of Fraser", "src\\images\\barbecue.jpg", 76.99);
 							
+							result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct());
+							
+							Outdoor outdoor2 = new Outdoor("25 cm x 16 cm x 13.5 cm", "Decorative Birdhouse", "Wonderfully unique and charming, "
+									+ "this industrial finish birdhouse will bring colour and style to any garden space. A quirky twist on a "
+									+ "traditional design this contemporary piece is hand painted to ensure each one is unique in its own way. "
+									+ "Securely hang from a north facing branch, on a shady fence or wall in your garden. ", "House of Fraser", 
+									"src\\images\\birdHouse.jpg", 17.50);
+							
+							result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct());
+							
+							Outdoor outdoor3 = new Outdoor("52 cm x 14 cm", "Trowel And Weeder Set", "Radius Hand Tools feature an advanced, "
+									+ "patented, high performance ergonomic grip providing more leverage with less wrist stress. The Ultra Light "
+									+ "Weight aluminium/ magnesium blades ensure an impressive strength to weight ratio making light work of "
+									+ "those awkward jobs in the garden. Radius Hand Tools all feature a unique, secure and comfortable Natural "
+									+ "Radius Grip that minimises hand and wrist stress making them suitable for more prolonged use whether "
+									+ "conditions are wet or dry. ", "House of Fraser", "src\\images\\gardenEquipment.png", 19.95);
+							
+							result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct());
 						}
 						
 						/* Create instances of Game with some information of real games, get this information and 
