@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -35,6 +37,7 @@ public class Result extends JFrame {
 	private JLabel backLabel;
 	
 	private int xPosition = 50;
+	private ArrayList<String> urlPage = new ArrayList<String>();
 	
 	public static void main(String[] args) {
 		
@@ -115,16 +118,22 @@ public class Result extends JFrame {
 		productIconLabel = new JLabel[3];
 		productNameLabel = new JLabel[3];
 		productPriceLabel = new JLabel[3];
+		urlPage.add("");
+		urlPage.add("");
+		urlPage.add("");
 		
 		/* Create a loop starting with 0 and ending with 3 to add all the components into the panel */
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 3 ; i++) {
 			productIconLabel[i] = new JLabel("");
 			
 			productIconLabel[i].addMouseListener( new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent arg0) {
-					Result.this.setVisible(false);
-					new Detail().setVisible(true);
+					try {
+						Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + urlPage.get(i));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}   
 				}
 			});
 			
@@ -161,10 +170,11 @@ public class Result extends JFrame {
 	
 	/* Function to receive part of information sent from the form page */
 	public void radioButtonResult(int productIndexNumber, String productImageAddress, String productName, 
-			double productPrice) {
+			double productPrice, String url) {
 		productIconLabel[productIndexNumber].setIcon(new ImageIcon(productImageAddress));
 		productNameLabel[productIndexNumber].setText(productName);
 		productPriceLabel[productIndexNumber].setText(Double.toString(productPrice) + " €");
+		urlPage.add(productIndexNumber, url);
 	}
 	
 	/* Function to add the drawings into the panel */

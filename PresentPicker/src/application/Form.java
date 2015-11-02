@@ -260,7 +260,7 @@ public class Form extends JFrame {
 				/* Create an instance of the result page */
 				Result result = new Result();
 				
-				try {
+				//try {
 					/* First of all it is necessary get all information given */
 					result.giftedNameReceived(firstNameTextField.getText(), lastNameTextField.getText());
 					gifted.setAgeGifted(Integer.parseInt(ageTextField.getText()));
@@ -274,197 +274,165 @@ public class Form extends JFrame {
 							
 						/* Male */
 						case 1:
-							/* Create instances of Book with some information of a real book, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real books, get this information and 
+							 * send it to the result page */
 							if (bookRadioButton.isSelected()) {
 								result.radioButtonReceived(bookRadioButton.getText());
-								Book book1 = new Book("David Lagercrantz", 544, "The girl in the spider's web", "She is the girl "
-										+ "with the dragon tattoo. Lisbeth Salander. An uncompromising misfit whose burning sense of injustice"
-										+ " and talent for investigation will never respect boundaries of state or status. He is a campaigning"
-										+ " journalist. Mikael Blomkvist. A lone wolf whose integrity and championing of the truth bring him "
-										+ "time and again to the brink of unemployment - and prosecution. The call comes in late at night: "
-										+ "a superhacker has gained access to critical, top secret U.S. intelligence. Blomkvist knows only "
-										+ "one person who could crack the best security systems in the world. This case has all the hallmarks "
-										+ "of Salander. She is accused of acting without reason, taking risks just because she can, but "
-										+ "though they have lost touch, Blomkvist knows Lisbeth better than that. There must be something "
-										+ "deeper at the heart of this - maybe even the scoop that Millennium magazine so desperately needs "
-										+ "for its survival. A tangled web of truth that someone is prepared to kill to protect.", "Eason", 
+								Product book1 = new Product("The girl in the spider's web", 
+										"http://www.easons.com/p-3543944-the-girl-in-the-spiders-web.aspx", "Eason", 
 										"src\\images\\girlSpiderWeb.jpg", 16.99);
+								
+								result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct(), 
+										book1.getUrlProduct());
+								
+								Product book2 = new Product("Pulling the Strings", "http://www.easons.com/p-3870831-pulling-the-strings.aspx", 
+										"Eason", "src\\images\\pullingStrings.jpg", 22.99);
 	
-								result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct());
+								result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct(), 
+										book2.getUrlProduct());
+								
+								Product book3 = new Product("Almost the Perfect Murder", 
+										"http://www.easons.com/p-3713841-almost-the-perfect-murder.aspx", "Eason", 
+										"src\\images\\perfectMurder.jpg", 19.99);
 	
-								Book book2 = new Book("Peter Stringer", 280, "Pulling the Strings", "The long-awaited autobiography "
-										+ "of Ireland's most beloved rugby player: Peter Stringer When Peter Stringer played youth rugby, he "
-										+ "was so small that people told his parents he shouldn't be allowed on the pitch. Fortunately for "
-										+ "Munster and for Ireland, they paid no attention. Over 200 provincial caps and 98 international caps "
-										+ "later, Stringer is a legend. Since making his Munster debut in 1998, his lightning-quick passing, "
-										+ "sniping breaks and brave defending have electrified fans - never more so than when he deceived the "
-										+ "entire Biarritz team at a scrum to sneak in for the try that brought Munster its first Heineken Cup "
-										+ "in 2006. In Ireland's breakthrough season of 2009, his man-of-the-match performance at Murrayfield "
-										+ "helped overturn a late deficit en route to the Six Nations Grand Slam. Now, for the first time, Peter "
-										+ "Stringer tells his own story - a story of overcoming the odds, and a story every Irish rugby fan will "
-										+ "want to read.", "Eason", "src\\images\\pullingStrings.jpg", 22.99);
-	
-								result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct());
-	
-								Book book3 = new Book("Paul Williams", 288, "Almost the Perfect Murder", "For over a year everyone "
-										+ "assumed missing Dublin woman Elaine O'Hara had ended her own life. But after her remains were found "
-										+ "garda discovered that Elaine was in thrall to a man who had spent years grooming her to let him kill "
-										+ "her. That man was Graham Dwyer, a married father of three and partner in a Dublin architecture "
-										+ "practice. Almost the Perfect Murder details the exhaustive investigation - one of the most complex "
-										+ "and chilling in Irish criminal justice history - that allowed garda to build a case against Dwyer. "
-										+ "And it outlines the twists and turns - both in the courtroom and behind the scenes - during the "
-										+ "dramatic trial that followed. Almost the Perfect Murder contains startling new material based on "
-										+ "extensive research conducted especially for the book. This includes fresh insights into the garda "
-										+ "investigation and background information on Graham Dwyer. This is the definitive account of the case "
-										+ "that gripped the nation by Ireland's leading crime journalist, Paul Williams. 'An example of "
-										+ "doggedness and tenacious police work, which saw that justice was done, and seen to be done' Irish "
-										+ "Independent.", "Eason", "src\\images\\perfectMurder.jpg", 19.99);
-	
-								result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct());
+								result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct(), 
+										book3.getUrlProduct());
 							}
 							
-							/* Create instances of Sport with some information of a real sport equipment, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real sport equipments, get this information and 
+							 * send it to the result page */
 							else if (sportRadioButton.isSelected()) {
 								result.radioButtonReceived(sportRadioButton.getText());
-								Sport sport1 = new Sport("Rugby", "S/M/L/XL/XXL/XXXL", "Canterbury Ireland RFU", "The Canterbury Ireland RFU "
-										+ "Home Pro Shirt combines Canterburys classic loop neckline with a lightweight wicking fabric for all "
-										+ "round comfort, complete with 3D injection moulded Shamrock adorning the chest rounding off the look "
-										+ "perfectly. ", "Sports Direct", "src\\images\\rugbyTShirt.jpg", 62.39);
+								Product sport1 = new Product("Canterbury Ireland RFU", 
+										"http://ie.sportsdirect.com/canterbury-ireland-rfu-home-pro-shirt-2015-2016-381123?colcode=38112316", 
+										"Sports Direct", "src\\images\\rugbyTShirt.jpg", 62.39);
 	
-								result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct());
+								result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct(), 
+										sport1.getUrlProduct());
 	
-								Sport sport2 = new Sport("Martial Art", "One size", "Lonsdale M Core Headguard", "The Lonsdale M Core Headguard "
-										+ "is perfect for sparring sessions, has an L Core front designed for maximum cushioning by using multiple"
-										+ " layers of closed cell foam and M Core sides for maximum breathability and keep you cooler for longer."
-										+ " The Lonsdale Headguard is a one size fits all with an adjustable hook and loop tape fastening.", 
-										"Sports Direct", "src\\images\\headguard.jpg", 11.99);
+								Product sport2 = new Product("Lonsdale Pro Headguard", 
+										"http://ie.sportsdirect.com/lonsdale-pro-training-head-guard-762352?colcode=76235241", 
+										"Sports Direct", "src\\images\\headguard.jpg", 17.99);
 	
-								result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct());
-	
-								Sport sport3 = new Sport("Football", "6 to 13", "Adidas Goletto FG", "Get a comfortable fit with the adidas "
-										+ "Goletto FG Mens Football Boots thanks to the padded and shaped ankle collar with cushioned foam "
-										+ "insole, whilst the full laced front helps to secure the foot in place. These Football Boots have a "
-										+ "stitched forefoot for increased ball control and the moulded studs for increased traction and support "
-										+ "on firm ground.", "Sports Direct", "src\\images\\footballBoots.jpg", 31.20);
+								result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct(), 
+										sport2.getUrlProduct());
 								
-								result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct());
+								Product sport3 = new Product("Adidas Goletto FG", 
+										"http://ie.sportsdirect.com/adidas-goletto-fg-mens-football-boots-203298?colcode=20329824", 
+										"Sports Direct", "src\\images\\footballBoots.jpg", 31.20);	
+								
+								result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct(), 
+										sport3.getUrlProduct());
 							}
 							
-							/* Create instances of Religion with some information of a real religious equipment, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real religious equipments, get this information and 
+							 * send it to the result page */
 							else if (religionRadioButton.isSelected()) {
 								result.radioButtonReceived(religionRadioButton.getText());
-								Religion religion1 = new Religion("30 cm", "St Joseph Statue", "", "Veritas", "src\\images\\stJoseph.jpg", 34.95);
+								Product religion1 = new Product("St Joseph Statue", "http://www.veritasbooksonline.com/st-joseph-statue-30cm.html", 
+										"Veritas", "src\\images\\stJoseph.jpg", 34.95);	
 	
-								result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct());
-	
-								Religion religion2 = new Religion("35 cm", "Olive Wood Crucifix", "", "Veritas", "src\\images\\oliveCrucifix.png", 
-										25.00);
-	
-								result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), 
-										religion2.getPriceProduct());
-	
-								Religion religion3 = new Religion("", "CD Table of the World", "In this new recording from Tony Alonso, you will find "
-										+ "ritual songs of mission and ministry that challenge us to take the Gospel vision from the table of Christ "
-										+ "Jesus to the table of the world. Songs like 'How Good It Is' and 'I Will Arise' portray a message of "
-										+ "forgiveness, reconciliation, peace, and unity. These themes are also reflected in the usage of diverse "
-										+ "languages and music from other cultures throughout this recording. Many of the songs are bilingual, "
-										+ "incorporating both Spanish and English.", "Veritas", "src\\images\\tableWorld.jpg", 14.95);
+								result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct(),
+										religion1.getUrlProduct());
+
+								Product religion2 = new Product("Olive Wood Crucifix", 
+										"http://www.veritasbooksonline.com/wooden-crucifix-with-silver-corpus-1.html", "Veritas", 
+										"src\\images\\oliveCrucifix.png", 45.00);	
 								
-								result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
+								result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), religion2.getPriceProduct(), 
+										religion2.getUrlProduct());
+								
+								Product religion3 = new Product("CD Table of the World", 
+										"http://www.veritasbooksonline.com/table-of-the-world.html", "Veritas", "src\\images\\tableWorld.jpg", 
+										14.95);
+								
+								result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct(),
+										religion3.getUrlProduct());
 							}
 							
-							/* Create instances of Kid with some information of real toys, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real kids toys, get this information and send it to the result 
+							 * page */
 							else if (kidsRadioButton.isSelected()) {
 								result.radioButtonReceived(kidsRadioButton.getText());
-								Kid kid1 = new Kid(3, "Robotic Puppy", "Newborn Teksta Puppy is a sweet and adorable life-like robotic Puppy that"
-										+ " responds to your voice and touch. Engineered with state-of-the-art artificial intelligence, Tekstas "
-										+ "toyetic interaction offers many emotions and an expressive light-up eye patterns to share his "
-										+ "feelings. As your devoted companion, using cutting edge hand gesture technology, you can command "
-										+ "Newborn Teksta Puppy to sit, walk, beg and sing. ", "Debenhams", "src\\images\\roboticPuppy.jpg", 28.00);
+								Product kid1 = new Product("Robotic Puppy", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171040454899_-1", "Debenhams", 
+										"src\\images\\roboticPuppy.jpg", 28.00);
 								
-								result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct());
+								result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct(), 
+										kid1.getUrlProduct());
 								
-								Kid kid2 = new Kid(4, "LEGO Comics Super Heroes", "DK's LEGO DC Comics Super Heroes Level 3 Reader features "
-										+ "LEGO Batman and many more of DC's best-loved LEGO Super Heroes as they fight to protect the world "
-										+ "from cunning villains. Discover how LEGO Batman fights crime in Gotham City and learn all about his "
-										+ "super talents, gadgets and vehicles. Meet the villains that LEGO Batman must battle, as well as the "
-										+ "allies who help Batman on his most dangerous missions. DK Readers have easy-to-read stories with word"
-										+ " repetition and pictures to build literacy skills, DK Readers are a multi-level reading programme "
-										+ "guaranteed to capture a child's interest while developing reading skills and general knowledge, "
-										+ "compatible with the framework for teaching literacy.", "Debenhams", "src\\images\\legoBatman.jpg", 7.00);
+								Product kid2 = new Product("LEGO Comics Super Heroes", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171040584099_-1", "Debenhams", 
+										"src\\images\\legoBatman.jpg", 7.00);
 								
-								result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct());
+								result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct(), 
+										kid2.getUrlProduct());
 								
-								Kid kid3 = new Kid(1, "Oball Rollie Elephant", "The Oball Rollie Elephant is soft, and flexible for little hands "
-										+ "even the tiniest hands can pick them up! Babies will love this easy-to-grasp toy so much that they won't"
-										+ " want to put it down. The toy features an internal rattle ball to encourage auditory and tactile "
-										+ "stimulation. Baby will get a grip on playtime with this character's bold colors and dynamic play "
-										+ "patterns.", "Debenhams", "src\\images\\elephantToy.jpg", 5.10);
+								Product kid3 = new Product("Oball Rollie Elephant", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171050933799_-1", "Debenhams", 
+										"src\\images\\elephantToy.jpg", 5.10);
 								
-								result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct());
+								result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct(),
+										kid3.getUrlProduct());
 							}
 							
-							/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real outdoor equipments, get this information and send it to 
+							 * the result page */
 							else if (outdoorRadioButton.isSelected()) {
 								result.radioButtonReceived(outdoorRadioButton.getText());
-								Outdoor outdoor1 = new Outdoor("104 cm x 72 cm", "La Hacienda", "This Large Kettle Barbecue is the perfect way to "
-										+ "enjoy BBQ treats in the sunshine. Make the most of the summer and get the family out in the garden as you "
-										+ "serve up sizzling sausages, crispy chicken legs, grilled burgers, juicy steaks and much more just the way"
-										+ " you like it.", "House Of Fraser", "src\\images\\barbecue.jpg", 76.99);
+								Product outdoor1 = new Product("Black Kettle BBQ", 
+										"http://www.houseoffraser.co.uk/La+Hacienda+54cm+black+kettle+BBQ/225052888,default,pd.html", 
+										"House Of Fraser", "src\\images\\barbecue.jpg", 109.99);
 								
-								result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct());
+								result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct(),
+										outdoor1.getUrlProduct());
+							
+								Product outdoor2 = new Product("Decorative Birdhouse", 
+										"http://www.houseoffraser.co.uk/La+Hacienda+Large+Decorative+Birdhouse/222606557,default,pd.html", 
+										"House Of Fraser", "src\\images\\birdHouse.jpg", 25.00);
 								
-								Outdoor outdoor2 = new Outdoor("25 cm x 16 cm x 13.5 cm", "Decorative Birdhouse", "Wonderfully unique and charming, "
-										+ "this industrial finish birdhouse will bring colour and style to any garden space. A quirky twist on a "
-										+ "traditional design this contemporary piece is hand painted to ensure each one is unique in its own way. "
-										+ "Securely hang from a north facing branch, on a shady fence or wall in your garden. ", "House of Fraser", 
-										"src\\images\\birdHouse.jpg", 17.50);
+								result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct(),
+										outdoor2.getUrlProduct());
 								
-								result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct());
+								Product outdoor3 = new Product("Trowel And Weeder Set", 
+										"http://www.houseoffraser.co.uk/Radius+Trowel+and+weeder+set/224107907,default,pd.html", 
+										"House of Fraser", "src\\images\\gardenEquipment.png", 19.95);
 								
-								Outdoor outdoor3 = new Outdoor("52 cm x 14 cm", "Trowel And Weeder Set", "Radius Hand Tools feature an advanced, "
-										+ "patented, high performance ergonomic grip providing more leverage with less wrist stress. The Ultra Light "
-										+ "Weight aluminium/ magnesium blades ensure an impressive strength to weight ratio making light work of "
-										+ "those awkward jobs in the garden. Radius Hand Tools all feature a unique, secure and comfortable Natural "
-										+ "Radius Grip that minimises hand and wrist stress making them suitable for more prolonged use whether "
-										+ "conditions are wet or dry. ", "House of Fraser", "src\\images\\gardenEquipment.png", 19.95);
-								
-								result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct());
+								result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct(),
+										outdoor3.getUrlProduct());
 							}
 							
-							/* Create instances of Game with some information of real games, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							/* Create instances of Product with some information of real games, get this information and send it to 
+							 * the result page */
 							else if (gameRadioButton.isSelected()) {
 								result.radioButtonReceived(gameRadioButton.getText());
-								Game game1 = new Game("XBox One", "Halo 5: Guardians", "", "Game Stop", "src\\images\\halo5.jpg", 69.99);
 								
-								result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct());
+								Product game1 = new Product("Halo 5: Guardians", "https://www.gamestop.ie/Xbox%20One/Games/45020/halo-5-guardians", 
+										"Game Stop", "src\\images\\halo5.jpg", 69.99);
 								
-								Game game2 = new Game("PlayStation 4", "WWE 2K16", "The newest addition to the flagship WWE franchise will deliver "
-										+ "authentic, high-powered and hard-hitting action, including fan-favourite features and new WWE Superstars, "
-										+ "Divas and Legends, gameplay innovations, presentation updates and more.", "Game Stop", 
-										"src\\images\\WWW2k16.jpg", 74.99);
+								result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct(), 
+										game1.getUrlProduct());
 								
-								result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct());
 								
-								Game game3 = new Game("Wii U", "Project Zero", "Feel the fingers of fear on the nape of your neck in Project Zero: "
-										+ "Maiden of Black Water, only on Wii U. Explore dank, dark locations, exorcise malevolent apparitions with "
-										+ "a strange camera, and tread deep into a mystery that spans this world and the next.", "Game Stop", 
-										"src\\images\\projectZero.jpg", 69.99);
+								Product game2 = new Product("WWE 2K16", "https://www.gamestop.ie/Xbox%20360/Games/52107/wwe-2k16", 
+										"Game Stop", "src\\images\\WWW2k16.jpg", 54.99);
 								
-								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct());
+								result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct(), 
+										game2.getUrlProduct());
+								
+								
+								Product game3 = new Product("Project Zero", "https://www.gamestop.ie/Wii%20U/Games/52697/project-zero-maiden-of-black-water", 
+										"Game Stop", "src\\images\\projectZero.jpg", 69.99);
+								
+								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct(), 
+										game3.getUrlProduct());
 							}
 							break;
 							
 						/* Female */
 						case 2:
 							/* Create instances of Book with some information of a real book, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							if (bookRadioButton.isSelected()) {
 								result.radioButtonReceived(bookRadioButton.getText());
 								Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
@@ -507,7 +475,7 @@ public class Form extends JFrame {
 							}
 							
 							/* Create instances of Sport with some information of a real sport equipment, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							else if (sportRadioButton.isSelected()) {
 								result.radioButtonReceived(sportRadioButton.getText());
 								Sport sport1 = new Sport("Swimming", "XL", "Slazenger Tankini Set", "The Slazenger Tankini Set offers a comfortable"
@@ -535,7 +503,7 @@ public class Form extends JFrame {
 							}
 							
 							/* Create instances of Religion with some information of a real religious equipment, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							else if (religionRadioButton.isSelected()) {
 								result.radioButtonReceived(religionRadioButton.getText());
 								Religion religion1 = new Religion("", "My Guardian Angel", "Enchanting pearl oval pendant with silver chain "
@@ -555,7 +523,7 @@ public class Form extends JFrame {
 							}
 							
 							/* Create instances of Kid with some information of real toys, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							else if (kidsRadioButton.isSelected()) {
 								result.radioButtonReceived(kidsRadioButton.getText());
 								Kid kid1 = new Kid(0, "Owl Rattle", "Baby will have oodles fo fun with this soft rattle.", "Debenhams", 
@@ -579,7 +547,7 @@ public class Form extends JFrame {
 							}
 							
 							/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							else if (outdoorRadioButton.isSelected()) {
 								result.radioButtonReceived(outdoorRadioButton.getText());
 								Outdoor outdoor1 = new Outdoor("39 cm x 2 cm", "Wall Heart", "This funky and colourful wall art heart is the perfect "
@@ -609,7 +577,7 @@ public class Form extends JFrame {
 							}
 							
 							/* Create instances of Game with some information of real games, get this information and 
-							 * send part of it (image, name and price) to the result page*/
+							 * send part of it (image, name and price) to the result page
 							else if (gameRadioButton.isSelected()) {
 								result.radioButtonReceived(gameRadioButton.getText());
 								Game game1 = new Game("Nitendo 3DS", "Garfield Kart", "The laziest cat in the world gets a serious speed boost! "
@@ -634,17 +602,18 @@ public class Form extends JFrame {
 								
 								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct());
 							}
-							break;
+							break;*/
+							
 					}
 					
 					/* Set form page as invisible and result page as visible */
 					Form.this.setVisible(false);
 					result.setVisible(true);
-				}
+				//}
 				
-				catch (Exception e) {
-					errorLabel.setText("[ERROR] Please complete everything.");
-				}
+				//catch (Exception e) {
+				//	errorLabel.setText("[ERROR] Please complete everything.");
+				//}
 			}
 		});
 		

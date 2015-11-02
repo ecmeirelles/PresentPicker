@@ -4,7 +4,7 @@ package category;
 public class Product {
 	/* Product attributes: name, description, store, image and price */
 	protected String nameProduct;
-	protected String descriptionProduct;
+	protected String urlProduct;
 	protected String storeProduct;
 	protected String imageProduct;
 	protected double priceProduct;
@@ -15,10 +15,10 @@ public class Product {
 	}
 
 	/* Full constructor */
-	public Product(String nameProduct, String descriptionProduct, String storeProduct, String imageProduct, 
+	public Product(String nameProduct, String urlProduct, String storeProduct, String imageProduct, 
 			double priceProduct) {
 		this.nameProduct = nameProduct;
-		this.descriptionProduct = descriptionProduct;
+		this.urlProduct = urlProduct;
 		this.storeProduct = storeProduct;
 		this.priceProduct = priceProduct;
 		this.imageProduct = imageProduct;
@@ -33,12 +33,12 @@ public class Product {
 		this.nameProduct = nameProduct;
 	}
 
-	public String getDescriptionProduct() {
-		return descriptionProduct;
+	public String getUrlProduct() {
+		return urlProduct;
 	}
 
-	public void setDescriptionProduct(String descriptionProduct) {
-		this.descriptionProduct = descriptionProduct;
+	public void setUrlProduct(String urlProduct) {
+		this.urlProduct = urlProduct;
 	}
 
 	public String getStoreProduct() {
