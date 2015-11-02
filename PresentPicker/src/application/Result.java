@@ -126,15 +126,19 @@ public class Result extends JFrame {
 			final int fi = i;
 			productIconLabel[i] = new JLabel("");
 			
+			/* When the person pressed the image, then he/she will be redirect to the store page */
 			productIconLabel[i].addMouseListener( new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent arg0) {
 					try {
+						/* Open a little window showing what will happen */
 						JOptionPane.showMessageDialog(null, "You'll be redirect to the store page...");
+						/* Responsible for opening the specific URL in the person's default browser */
 						Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + urlPage.get(fi));
+						/* Close the JFrame */
 						Result.this.dispatchEvent(new WindowEvent(Result.this, WindowEvent.WINDOW_CLOSING));
 					} catch (IOException e) {
-						e.printStackTrace();
+						System.out.println("Sorry, the page cannot be opened.");
 					}  
 				}
 			});
