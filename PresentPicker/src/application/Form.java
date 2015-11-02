@@ -28,7 +28,6 @@ public class Form extends JFrame {
 	private JLabel appIconLabel;
 	private JLabel appNameLabel;
 	private JLabel formDescriptionLabel;
-	private JLabel backLabel;
 	private JLabel errorLabel;
 	private JTextField firstNameTextField;
 	private JTextField lastNameTextField;
@@ -92,23 +91,6 @@ public class Form extends JFrame {
 		appNameLabel.setForeground(new Color(7, 168, 88));
 		appNameLabel.setBounds(100, 40, 250, 30);
 		pane.add(appNameLabel);
-		
-		/* Create a label which will allow the user to go back to the previous page */
-		backLabel = new JLabel("Previous Page");
-		/* When the user clicks in the label the current page becomes invisible and the previous one (Welcome)
-		 * becomes visible */
-		backLabel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				Form.this.setVisible(false);
-				new Welcome().setVisible(true);
-			}
-		});
-		
-		backLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
-		backLabel.setIcon(new ImageIcon("src\\images\\back.png"));
-		backLabel.setBounds(30, 100, 200, 30);
-		pane.add(backLabel);
 		
 		/* Create an informational label and add it into the panel */
 		formDescriptionLabel = new JLabel("We need some information regarding the gifted...");

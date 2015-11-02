@@ -81,16 +81,8 @@ public class Result extends JFrame {
 		
 		/* Create a label which will allow the user to go back to the previous page */
 		backLabel = new JLabel("Previous Page");
-		/* When the user clicks in the label the current page becomes invisible and the previous one (Welcome)
-		 * becomes visible */
-		backLabel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				Result.this.setVisible(false);
-				new Form().setVisible(true);
-			}
-		});
-		
+		/* Usage of external listener class */
+		backLabel.addMouseListener(new BackAction(this));
 		backLabel.setFont(new Font(FONT_BODY, Font.BOLD, 16));
 		backLabel.setIcon(new ImageIcon("src\\images\\back.png"));
 		backLabel.setBounds(30, 100, 200, 30);
