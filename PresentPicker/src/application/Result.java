@@ -5,12 +5,14 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -128,7 +130,9 @@ public class Result extends JFrame {
 				@Override
 				public void mousePressed(MouseEvent arg0) {
 					try {
+						JOptionPane.showMessageDialog(null, "You'll be redirect to the store page...");
 						Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + urlPage.get(fi));
+						Result.this.dispatchEvent(new WindowEvent(Result.this, WindowEvent.WINDOW_CLOSING));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}  

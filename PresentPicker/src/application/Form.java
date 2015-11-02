@@ -162,7 +162,7 @@ public class Form extends JFrame implements ActionListener {
 		ageTextField = new JTextField();
 		ageTextField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
+				/* If age is below 11 years old, then the kidsRadioButton becomes selected */ 
 				if (Integer.parseInt(ageTextField.getText()) < 11) {
 					kidsRadioButton.setSelected(true);
 				}
@@ -254,7 +254,6 @@ public class Form extends JFrame implements ActionListener {
 		searchButton = new JButton("SEARCH");
 		searchButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
 		searchButton.setBounds(520, 700, 150, 30);
-		
 		searchButton.addActionListener(this);
 		pane.add(searchButton);
 	}

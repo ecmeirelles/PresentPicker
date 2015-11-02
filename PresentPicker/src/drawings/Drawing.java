@@ -133,9 +133,9 @@ public class Drawing {
 		/* Drawing the TV */
 		g2.drawRect(820, 700, 120, 70);
 		g2.drawRect(830, 710, 100, 50);
-		/* Drawing the joystick */
+		/* Drawing the console */
 		g2.fillRect(810, 750, 50, 20);
-		/* Set XOR Mode to the bottoms of the joystick */
+		/* Set XOR Mode to the buttons of the console */
 		g2.setXORMode(Color.GRAY);
 		g2.fillOval(820, 755, 10, 10);
 		g2.fillOval(840, 755, 10, 10);
