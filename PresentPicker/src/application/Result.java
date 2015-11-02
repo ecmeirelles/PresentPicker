@@ -118,22 +118,20 @@ public class Result extends JFrame {
 		productIconLabel = new JLabel[3];
 		productNameLabel = new JLabel[3];
 		productPriceLabel = new JLabel[3];
-		urlPage.add("");
-		urlPage.add("");
-		urlPage.add("");
 		
 		/* Create a loop starting with 0 and ending with 3 to add all the components into the panel */
 		for (int i = 0; i < 3 ; i++) {
+			final int fi = i;
 			productIconLabel[i] = new JLabel("");
 			
 			productIconLabel[i].addMouseListener( new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent arg0) {
 					try {
-						Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + urlPage.get(i));
+						Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + urlPage.get(fi));
 					} catch (IOException e) {
 						e.printStackTrace();
-					}   
+					}  
 				}
 			});
 			

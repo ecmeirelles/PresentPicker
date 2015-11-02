@@ -450,7 +450,7 @@ public class Form extends JFrame {
 								result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct(), 
 										book2.getUrlProduct());
 								
-								Product book3 = new Product("Red", "http://www.easons.com/p-3713841-almost-the-perfect-murder.aspx", "Eason", 
+								Product book3 = new Product("Red", "http://www.easons.com/p-3796039-red.aspx", "Eason", 
 										"src\\images\\red.jpg", 25.50);
 	
 								result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct(), 
