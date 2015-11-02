@@ -260,7 +260,7 @@ public class Form extends JFrame {
 				/* Create an instance of the result page */
 				Result result = new Result();
 				
-				//try {
+				try {
 					/* First of all it is necessary get all information given */
 					result.giftedNameReceived(firstNameTextField.getText(), lastNameTextField.getText());
 					gifted.setAgeGifted(Integer.parseInt(ageTextField.getText()));
@@ -421,199 +421,181 @@ public class Form extends JFrame {
 										game2.getUrlProduct());
 								
 								
-								Product game3 = new Product("Project Zero", "https://www.gamestop.ie/Wii%20U/Games/52697/project-zero-maiden-of-black-water", 
-										"Game Stop", "src\\images\\projectZero.jpg", 69.99);
+								Product game3 = new Product("Project Zero", 
+										"https://www.gamestop.ie/Wii%20U/Games/52697/project-zero-maiden-of-black-water", "Game Stop", 
+										"src\\images\\projectZero.jpg", 69.99);
 								
 								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct(), 
 										game3.getUrlProduct());
 							}
+							/* End of the case: Male */
 							break;
 							
 						/* Female */
 						case 2:
-							/* Create instances of Book with some information of a real book, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real books, get this information and 
+							 * send it to the result page */
 							if (bookRadioButton.isSelected()) {
 								result.radioButtonReceived(bookRadioButton.getText());
-								Book book1 = new Book("Paula Hawkins", 325, "The Girl on the Train", "Rachel catches the"
-										+ " same commuter train every morning. She knows it will wait at the same signal each time,"
-										+ " overlooking a row of back gardens. She's even started to feel like she knows the people"
-										+ " who live in one of the houses. 'Jess and Jason', she calls them. Their life - as she "
-										+ "sees it - is perfect. If only Rachel could be that happy. And then she sees something "
-										+ "shocking. It's only a minute until the train moves on, but it's enough. Now everything's"
-										+ " changed. Now Rachel has a chance to become a part of the lives she's only watched from"
-										+ " afar. Now they'll see she's much more than just the girl on the train.", "Eason", 
-										"src\\images\\girlOnTrain.jpg", 17.99);
-	
-								result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct());
+								Product book1 = new Product("The Girl on the Train", 
+										"http://www.easons.com/p-3228898-the-girl-on-the-train.aspx", "Eason", "src\\images\\girlOnTrain.jpg",
+										17.99);
 								
-								Book book2 = new Book("Stephenie Meyer", 441, "Twilight Reimagined", "Celebrate the tenth "
-										+ "anniversary of Twilight ! This special tenth anniversary edition includes the original novel "
-										+ "as well as exclusive new bonus content. Readers will relish experiencing the iconic love story "
-										+ "of Bella and Edward again . . . or for the very first time. Deeply romantic and extraordinarily "
-										+ "suspenseful,Twilight has enraptured millions of readers since its first publication in 2005 and "
-										+ "has become a modern classic, redefining genres within young adult literature and inspiring a "
-										+ "phenomenon that has had readers yearning for more. The novel was a Sunday Times and New York "
-										+ "Times bestseller. The Twilight Saga, which also includes New Moon, Eclipse, Breaking Dawn, The "
-										+ "Short Second Life of Bree Tanner: An Eclipse Novella, and The Twilight Saga: The Official "
-										+ "Illustrated Guide , has sold nearly 155 million copies worldwide.", "Eason", 
+								result.radioButtonResult(0, book1.getImageProduct(), book1.getNameProduct(), book1.getPriceProduct(), 
+										book1.getUrlProduct());
+								
+								Product book2 = new Product("Twilight Reimagined", "http://www.easons.com/p-3970413-twilight.aspx", "Eason", 
 										"src\\images\\twilight.jpg", 19.99);
 	
-								result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct());
+								result.radioButtonResult(1, book2.getImageProduct(), book2.getNameProduct(), book2.getPriceProduct(), 
+										book2.getUrlProduct());
 								
-								Book book3 = new Book("Jacky Colliss Harvey", 240, "Red", "In her history of red hair and "
-										+ "red-headedness, Jacky Colliss Harvey begins by tracing the redhead gene in prehistory, as it made "
-										+ "its way out of Africa with the early human diaspora to emerge under northern skies. She goes on to "
-										+ "explore red hair in the ancient world, the prejudice manifested against it across medieval Europe, "
-										+ "and red hair during the Renaissance, when it was seen as both an indicator of Jewishness and the "
-										+ "height of fashion in Protestant England, thanks to Elizabeth I. She also examines depictions of red "
-										+ "hair in art and literature, looks at modern medicine and the genetic decoding of red hair, and "
-										+ "considers red hair in contemporary culture, from advertising to 'gingerism' and bullying.", "Eason",
+								Product book3 = new Product("Red", "http://www.easons.com/p-3713841-almost-the-perfect-murder.aspx", "Eason", 
 										"src\\images\\red.jpg", 25.50);
 	
-								result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct());
+								result.radioButtonResult(2, book3.getImageProduct(), book3.getNameProduct(), book3.getPriceProduct(), 
+										book3.getUrlProduct());
 							}
 							
-							/* Create instances of Sport with some information of a real sport equipment, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real sport equipments, get this information and 
+							 * send it to the result page */
 							else if (sportRadioButton.isSelected()) {
 								result.radioButtonReceived(sportRadioButton.getText());
-								Sport sport1 = new Sport("Swimming", "XL", "Slazenger Tankini Set", "The Slazenger Tankini Set offers a comfortable"
-										+ " fit for your swim, whilst still offering a sporty and stylish look. This ladies tankini set is a two"
-										+ " piece set with a short style bottoms and full length tankini top both with contrasting piping and the"
-										+ " Slazenger logo. ", "Sports Direct", "src\\images\\tankini.jpg", 6.59);
+								Product sport1 = new Product("Slazenger Tankini Set", 
+										"http://ie.sportsdirect.com/slazenger-tankini-set-ladies-354023?colcode=35402322", 
+										"Sports Direct", "src\\images\\tankini.jpg", 11.40);
 	
-								result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct());
-								
-								Sport sport2 = new Sport("Cricket", "H/SH", "Slazenger V100 Advance", "This Slazenger V100 Advance Cricket Bat is"
-										+ " perfect for beginners who want to perfect a wide range of shots due to the OctoPlus grip, tapered toe"
-										+ " to promote the favoured stance and the Kashmir willow construction provides long lasting durability. "
-										+ "This Slazenger cricket bat has an OctoPlus grip to give you the confidence to play the shots you want"
-										+ " whilst the Slazenger branding completes the look.", "Sports Direct", "src\\images\\cricketBat.jpg", 
-										18.59);
+								result.radioButtonResult(0, sport1.getImageProduct(), sport1.getNameProduct(), sport1.getPriceProduct(), 
+										sport1.getUrlProduct());
 	
-								result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct());
+								Product sport2 = new Product("Slazenger Coach Catch", 
+										"http://ie.sportsdirect.com/slazenger-coach-catch-bat-851054?colcode=85105490", 
+										"Sports Direct", "src\\images\\cricketBat.jpg", 8.39);
+	
+								result.radioButtonResult(1, sport2.getImageProduct(), sport2.getNameProduct(), sport2.getPriceProduct(), 
+										sport2.getUrlProduct());
 								
-								Sport sport3 = new Sport("Running", "XXS/XS/S/M", "Karrimor Xlite Sports", "This Sports Bra has an elasticated "
-										+ "chest band for a secure fit, as well as mesh panels for breathability. This Running Top also features"
-										+ " a V Neck design and a racer back for freedom of movement and a great look.", "Sports Direct", 
-										"src\\images\\xliteRun.jpg", 8.39);
+								Product sport3 = new Product("Karrimor Xlite Sports", 
+										"http://ie.sportsdirect.com/karrimor-xlite-sports-bra-ladies-455301?colcode=45530190", 
+										"Sports Direct", "src\\images\\xliteRun.jpg", 8.39);	
 								
-								result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct());
+								result.radioButtonResult(2, sport3.getImageProduct(), sport3.getNameProduct(), sport3.getPriceProduct(), 
+										sport3.getUrlProduct());
 							}
 							
-							/* Create instances of Religion with some information of a real religious equipment, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real religious equipments, get this information and 
+							 * send it to the result page */
 							else if (religionRadioButton.isSelected()) {
 								result.radioButtonReceived(religionRadioButton.getText());
-								Religion religion1 = new Religion("", "My Guardian Angel", "Enchanting pearl oval pendant with silver chain "
-										+ "comes gift-boxed.", "Veritas", "src\\images\\guardianAngel.png", 24.95);
+								Product religion1 = new Product("My Guardian Angel", "http://www.veritasbooksonline.com/my-guardian-angel-1.html", 
+										"Veritas", "src\\images\\guardianAngel.png", 24.95);	
+	
+								result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct(),
+										religion1.getUrlProduct());
+
+								Product religion2 = new Product("Glass Rosary Beads", "http://www.veritasbooksonline.com/glass-rosary-beads.html", 
+										"Veritas", "src\\images\\rosary.jpg", 6.95);	
 								
-								result.radioButtonResult(0, religion1.getImageProduct(), religion1.getNameProduct(), religion1.getPriceProduct());
+								result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), religion2.getPriceProduct(), 
+										religion2.getUrlProduct());
 								
-								Religion religion2 = new Religion("", "Glass Rosary Beads", "Color: Green", "Veritas", 
-										"src\\images\\rosary.jpg", 6.95);
+								Product religion3 = new Product("St John Paul II Prayer Card", 
+										"http://www.veritasbooksonline.com/saint-john-paul-ii-prayer-card-pack.html", "Veritas", 
+										"src\\images\\prayerCard.jpg", 6.50);
 								
-								result.radioButtonResult(1, religion2.getImageProduct(), religion2.getNameProduct(), religion2.getPriceProduct());
-								
-								Religion religion3 = new Religion("", "St John Paul II Prayer Card", "", "Veritas", "src\\images\\prayerCard.jpg",
-										6.50);
-								
-								result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct());
+								result.radioButtonResult(2, religion3.getImageProduct(), religion3.getNameProduct(), religion3.getPriceProduct(),
+										religion3.getUrlProduct());
 							}
 							
-							/* Create instances of Kid with some information of real toys, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real kids toys, get this information and send it to the result 
+							 * page */
 							else if (kidsRadioButton.isSelected()) {
 								result.radioButtonReceived(kidsRadioButton.getText());
-								Kid kid1 = new Kid(0, "Owl Rattle", "Baby will have oodles fo fun with this soft rattle.", "Debenhams", 
+								Product kid1 = new Product("Owl Rattle", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171050933099_-1", "Debenhams", 
 										"src\\images\\owl.jpg", 5.10);
 								
-								result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct());
+								result.radioButtonResult(0, kid1.getImageProduct(), kid1.getNameProduct(), kid1.getPriceProduct(), 
+										kid1.getUrlProduct());
 								
-								Kid kid2 = new Kid(1, "Disney Frozen Else", "Elsa the powerful Snow Queen from Disney's Frozen is now available as a "
-										+ "cute and cuddly soft toy. Recreate scenes from the movie or cuddle up with your favourite Frozen princess"
-										+ " at night. This beautifully soft toy shows Elsa in her iconic blue gown, just like the movie.", 
-										"Debenhams", "src\\images\\elsaFrozen.jpg", 27.00);
+								Product kid2 = new Product("Disney Frozen Elsa", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171050500399_-1", "Debenhams", 
+										"src\\images\\elsaFrozen.jpg", 27.00);
 								
-								result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct());
+								result.radioButtonResult(1, kid2.getImageProduct(), kid2.getNameProduct(), kid2.getPriceProduct(), 
+										kid2.getUrlProduct());
 								
-								Kid kid3 = new Kid(3, "Minions Walkie Talkies", "Designed to look like your favourite Minions, Dave and Stuart, these"
-										+ " fun Walkie Talkies will keep you entertained for hours. Walkie Talkies include volume control and are easy"
-										+ " use for little hands, just press the button and talk. Why not pretend to be on a secret Minion mission and"
-										+ " let the adventure begin. Over and out!", "Debenhams", "src\\images\\minions.jpg", 20.00);
+								Product kid3 = new Product("Minions Walkie Talkies", 
+										"http://www.debenhams.ie/webapp/wcs/stores/servlet/prod_10052_10001_171040486399_-1", "Debenhams", 
+										"src\\images\\minions.jpg", 20.00);
 								
-								result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct());
+								result.radioButtonResult(2, kid3.getImageProduct(), kid3.getNameProduct(), kid3.getPriceProduct(),
+										kid3.getUrlProduct());
 							}
 							
-							/* Create instances of Outdoor with some information of real outdoor equipments, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real outdoor equipments, get this information and send it to 
+							 * the result page */
 							else if (outdoorRadioButton.isSelected()) {
 								result.radioButtonReceived(outdoorRadioButton.getText());
-								Outdoor outdoor1 = new Outdoor("39 cm x 2 cm", "Wall Heart", "This funky and colourful wall art heart is the perfect "
-										+ "accessory to liven up any space in the home or garden. Finished in stunning bright colours and with an "
-										+ "industrial finish this eye catching piece is sure to draw attention. Made from steel, this piece is coated "
-										+ "in paint that is suitable for outdoor use and has a size of 39cm high, 22cm wide and 6cm deep. A unique and "
-										+ "stylish piece that can be hung quickly and easily on any wall or fence - fixings not supplied. Add a piece "
-										+ "of industrial romance to your living space. Home is where the heart is...", "House Of Fraser", 
-										"src\\images\\wallHeart.png", 19.75);
+								Product outdoor1 = new Product("Wall Heart", 
+										"http://www.houseoffraser.co.uk/La+Hacienda+Wall+Heart+Long/222606515,default,pd.html", 
+										"House Of Fraser", "src\\images\\wallHeart.png", 28.21);
 								
-								result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct());
+								result.radioButtonResult(0, outdoor1.getImageProduct(), outdoor1.getNameProduct(), outdoor1.getPriceProduct(),
+										outdoor1.getUrlProduct());
+							
+								Product outdoor2 = new Product("Rattan Round Table", 
+							   "http://www.houseoffraser.co.uk/Oseasons+120cm+Eden+rattan+round+table+with+8mm+tempered+g/221744873,default,pd.html", 
+										"House Of Fraser", "src\\images\\roundTable.png", 309.00);
 								
-								Outdoor outdoor2 = new Outdoor("79 cm x 120 cm x 120 cm", "Rattan Round Table", "Eden Rattan Round Table With 8mm "
-										+ "tempered glass - Hand woven and easy to assemble (Flatpack), it can be left outdoors in all weather "
-										+ "conditions, thanks to UV resistant PVC rattan. A great way of adding an extra dimension to your garden, "
-										+ "this handsome furniture will serve you well for many years to come.", "House of Fraser", 
-										"src\\images\\roundTable.png", 309.00);
+								result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct(),
+										outdoor2.getUrlProduct());
 								
-								result.radioButtonResult(1, outdoor2.getImageProduct(), outdoor2.getNameProduct(), outdoor2.getPriceProduct());
+								Product outdoor3 = new Product("Small Play Pool", 
+										"http://www.houseoffraser.co.uk/Bestway+Small+Play+Pool/220715685,default,pd.html", 
+										"House of Fraser", "src\\images\\pool.png", 6.00);
 								
-								Outdoor outdoor3 = new Outdoor("120 cm x 25 cm x 120 cm", "Small Play Pool", "Bestway: Tots will love splashing about "
-										+ "in the Small Play Pool. Measuring 102cm in diameter and standing at 25cm tall, this handy little pool is "
-										+ "perfect for back-garden fun. Please note: styles vary - this pool comes in red, green or blue. One colour "
-										+ "will be chosen at random for you.", "House of Fraser", "src\\images\\pool.png", 6.00);
-								
-								result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct());
+								result.radioButtonResult(2, outdoor3.getImageProduct(), outdoor3.getNameProduct(), outdoor3.getPriceProduct(),
+										outdoor3.getUrlProduct());
 							}
 							
-							/* Create instances of Game with some information of real games, get this information and 
-							 * send part of it (image, name and price) to the result page
+							/* Create instances of Product with some information of real games, get this information and send it to 
+							 * the result page */
 							else if (gameRadioButton.isSelected()) {
 								result.radioButtonReceived(gameRadioButton.getText());
-								Game game1 = new Game("Nitendo 3DS", "Garfield Kart", "The laziest cat in the world gets a serious speed boost! "
-										+ "Three difficulties and four game modes await you. Quick race, championship, time trial and daily challenge. "
-										+ "Up to four friends can play against each other via the local wifi network. It's time to burn rubber and eat "
-										+ "lasagne!", "Game Stop", "src\\images\\garfieldKart.jpg", 29.99);
 								
-								result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct());
+								Product game1 = new Product("Garfield Kart", "https://www.gamestop.ie/Nintendo%203DS/Games/52564/garfield-kart", 
+										"Game Stop", "src\\images\\garfieldKart.jpg", 29.99);
 								
-								Game game2 = new Game("XBox 360", "Just Dance 2016", "Bust a move to “Uptown Funk” by Mark Ronson Ft. Bruno Mars and "
-										+ "feel the beat in “All About That Bass” by Meghan Trainor - Just Dance 2016 features an amazing tracklist "
-										+ "with visuals that are more creative and breath-taking than ever before.", "Game Stop", 
-										"src\\images\\justDance.jpg", 44.99);
+								result.radioButtonResult(0, game1.getImageProduct(), game1.getNameProduct(), game1.getPriceProduct(), 
+										game1.getUrlProduct());
 								
-								result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct());
 								
-								Game game3 = new Game("PC", "The Sims 4", "Treat your Sims to a day of pampering with The Sims™ 4 Spa Day. Visit the "
-										+ "all-new Perfect Balance Spa for a revitalizing massage, or work on the all-new Wellness skill with some "
-										+ "yoga. After a relaxing mud bath, step into the sauna to melt away the daily stresses. You’ll also get a "
-										+ "variety of all-new objects and décor, so you can pack your home with so much tranquility that your Sims "
-										+ "can’t help but find their inner peace!", "Game Stop", "src\\images\\theSims4.jpg", 44.99);
+								Product game2 = new Product("Just Dance 2016", "https://www.gamestop.ie/Xbox%20360/Games/53049/just-dance-2016", 
+										"Game Stop", "src\\images\\justDance.jpg", 44.99);
 								
-								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct());
+								result.radioButtonResult(1, game2.getImageProduct(), game2.getNameProduct(), game2.getPriceProduct(), 
+										game2.getUrlProduct());
+								
+								
+								Product game3 = new Product("The Sims 4", "https://www.gamestop.ie/PC/Games/53565/the-sims-4-bundle", "Game Stop", 
+										"src\\images\\theSims4.jpg", 44.99);
+								
+								result.radioButtonResult(2, game3.getImageProduct(), game3.getNameProduct(), game3.getPriceProduct(), 
+										game3.getUrlProduct());
 							}
-							break;*/
-							
+						/* End of the case: Female */
+						break;
 					}
 					
 					/* Set form page as invisible and result page as visible */
 					Form.this.setVisible(false);
 					result.setVisible(true);
-				//}
+				}
 				
-				//catch (Exception e) {
-				//	errorLabel.setText("[ERROR] Please complete everything.");
-				//}
+				catch (Exception e) {
+					errorLabel.setText("[ERROR] Please complete everything.");
+				}
 			}
 		});
 		
