@@ -2,7 +2,6 @@ package application;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.EmptyStackException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -608,7 +607,6 @@ public class Form extends JFrame {
 				
 				/* Handle with NumberFormatException which means that the attribute needs to be an Integer */
 				} catch(NumberFormatException e) {
-					errorLabel.setForeground(Color.BLUE);
 					errorLabel.setText("[ERROR] Age needs to be a valid number (real age).");
 				}
 			
