@@ -1,8 +1,8 @@
-package category;
+package product;
 
-/* Class that represents the products which is in the categories */
+/* Class that represents the products which are in the categories/interests */
 public class Product {
-	/* Product attributes: name, description, store, image and price */
+	/* Product attributes: name, url, store, image and price */
 	protected String nameProduct;
 	protected String urlProduct;
 	protected String storeProduct;

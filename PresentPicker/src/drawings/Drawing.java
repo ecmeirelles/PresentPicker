@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
 
+/* Class that represents the drawings which will appear in the different categories/interests */
 public class Drawing {
 	/* Drawing attributes, especially for the polygons */
 	private int xPagesLeft[] = {700, 700,800};

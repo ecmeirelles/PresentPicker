@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+/* Class that represents the first window of the main program, which will start the application */
 public class Welcome extends JFrame {	
 	/* Welcome attributes */
 	private JPanel pane;

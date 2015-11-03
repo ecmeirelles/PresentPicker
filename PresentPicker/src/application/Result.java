@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import drawings.Drawing;
 
+/* Class that represents the result of the search, which shows the appropriate gifts */
 public class Result extends JFrame {
 	private static final long serialVersionUID = 1L;
 	/* Constants to standardize all fonts */
@@ -26,7 +27,7 @@ public class Result extends JFrame {
 	public final String FONT_BODY = "Sylfaen";
 	public final String FONT_BUTTON = "Sylfaen";
 	
-	/* Form attributes */
+	/* Result attributes */
 	private JPanel pane;
 	private JLabel resultsForLabel;
 	private JLabel appIconLabel;
@@ -41,7 +42,7 @@ public class Result extends JFrame {
 	private int xPosition = 50;
 	private ArrayList<String> urlPage = new ArrayList<String>();
 	
-	/* To keep information received from the Form */
+	/* Attributes used to keep information received from the Form */
 	private String firstNameReceived;
 	private String lastNameReceived;
 	private String ageReceived;

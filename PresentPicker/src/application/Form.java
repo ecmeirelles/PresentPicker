@@ -14,9 +14,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import category.*;
 import gifted.Gifted;
+import product.*;
 
+/* Class that represents the form of the main program, which will send information to search for a gift */
 public class Form extends JFrame {
 	/* Form attributes */
 	private JPanel pane;
@@ -237,12 +238,11 @@ public class Form extends JFrame {
 		searchButton.setFont(new Font(FONT_BUTTON, Font.PLAIN, 16));
 		searchButton.setBounds(520, 700, 150, 30);
 		/* Usage of a named inner listener class */
-		ActionListener searchGift = new SearchListener();
-		searchButton.addActionListener(searchGift);
+		searchButton.addActionListener(new SearchListener());
 		pane.add(searchButton);
 	}
 	
-	/* Getters to access the firstName, lastName and age attributes */
+	/* Getters to access the firstName, lastName, age and gender attributes */
 	public JTextField getFirstNameTextField() {
 		return firstNameTextField;
 	}
@@ -596,15 +596,16 @@ public class Form extends JFrame {
 				
 				/* Set form page as invisible and result page as visible */
 				Form.this.setVisible(false);
-				
+				result.setVisible(true);
+				/* Send some information to Result */
 				result.getInformation(firstNameTextField.getText(), lastNameTextField.getText(), ageTextField.getText(), 
 						genderComboBox.getSelectedIndex());
-				result.setVisible(true);
-			}
 			
-			catch (Exception e) {
+			} catch (Exception e) {
 				errorLabel.setText("[ERROR] Please complete everything.");
-			}		
+			}
+		/* End of actionPerfomed method */
 		}
+	/* End of SearchListener class */
 	}
 }
