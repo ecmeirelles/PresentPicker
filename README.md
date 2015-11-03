@@ -1,4 +1,5 @@
 # Present Picker
+<i>© Made by Elaine Cristina Meirelles Peronico</i>
 
 This is an application, easy to use, that allows the user to choose the best gift for a loved one based on information filled in a form. 
 
@@ -19,5 +20,3 @@ Each one responsible for some presents. In addition, the application redirects t
 4. Confirm the action
 5. Follow the procedures of the store page to buy the product
 6. Deliver the gift to your loved one
-
-<i>© Made by Elaine Cristina Meirelles Peronico</i>
