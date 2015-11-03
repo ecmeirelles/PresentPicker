@@ -228,6 +228,7 @@ public class Form extends JFrame {
 				genderComboBox.setSelectedItem("");
 				ageTextField.setText("");
 				buttonGroup.clearSelection();
+				errorLabel.setText("");
 			}
 		});
 		
