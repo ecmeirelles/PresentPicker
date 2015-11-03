@@ -241,7 +241,25 @@ public class Form extends JFrame {
 		searchButton.addActionListener(searchGift);
 		pane.add(searchButton);
 	}
+	
+	/* Getters to access the firstName, lastName and age attributes */
+	public JTextField getFirstNameTextField() {
+		return firstNameTextField;
+	}
+	
+	public JTextField getLastNameTextField() {
+		return lastNameTextField;
+	}
+	
+	public JTextField getAgeTextField() {
+		return ageTextField;
+	}
+	
+	public JComboBox<String> getGenderComboBox() {
+		return genderComboBox;
+	}
 
+	/* Inner class to do an actionListener */
 	private class SearchListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -578,6 +596,9 @@ public class Form extends JFrame {
 				
 				/* Set form page as invisible and result page as visible */
 				Form.this.setVisible(false);
+				
+				result.getInformation(firstNameTextField.getText(), lastNameTextField.getText(), ageTextField.getText(), 
+						genderComboBox.getSelectedIndex());
 				result.setVisible(true);
 			}
 			

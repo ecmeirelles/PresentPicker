@@ -41,6 +41,12 @@ public class Result extends JFrame {
 	private int xPosition = 50;
 	private ArrayList<String> urlPage = new ArrayList<String>();
 	
+	/* To keep information received from the Form */
+	private String firstNameReceived;
+	private String lastNameReceived;
+	private String ageReceived;
+	private int genderIndexReceived;
+	
 	public static void main(String[] args) {
 		
 		Result frame = new Result();
@@ -200,5 +206,21 @@ public class Result extends JFrame {
 				drawing.drawGame(g);
 				break;
 		}
+	}
+	
+	/* Function to get information from the Form */
+	public void getInformation(String firstName, String lastName, String age, int genderIndex) {
+		this.firstNameReceived = firstName;
+		this.lastNameReceived = lastName;
+		this.ageReceived = age;
+		this.genderIndexReceived = genderIndex;
+	}
+	
+	/* Function to set information back to the Form */
+	public void setInformationBack(Form form) {
+		form.getFirstNameTextField().setText(firstNameReceived);
+		form.getLastNameTextField().setText(lastNameReceived);
+		form.getAgeTextField().setText(ageReceived);
+		form.getGenderComboBox().setSelectedIndex(genderIndexReceived);
 	}
 }

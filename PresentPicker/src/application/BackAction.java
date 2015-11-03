@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 /* When the user clicks in the label the current page becomes invisible and the previous one (Form) becomes visible */
 public class BackAction extends MouseAdapter implements MouseListener {
 	Result result;
+	Form form = new Form();
 	
 	public BackAction(Result result) {
 		this.result = result;
@@ -15,6 +16,7 @@ public class BackAction extends MouseAdapter implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		result.setVisible(false);
-		new Form().setVisible(true);
+		result.setInformationBack(form);
+		form.setVisible(true);
 	}
 }
