@@ -16,7 +16,7 @@ Each one responsible for some presents. In addition, the application redirects t
 ## How to Use:
 1. In the Welcome page click on start
 2. Fill all information and click on search
-3. Click on the image which contain the choosen gifted
+3. Click on the image which contains the choosen gifted
 4. Confirm the action
 5. Follow the procedures of the store page to buy the product
 6. Deliver the gift to your loved one
